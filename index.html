@@ -61,10 +61,63 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Handlebarsjs" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/07/26/Handlebarsjs/" class="article-date">
+  <time datetime="2015-07-26T09:15:01.022Z" itemprop="datePublished">2015-07-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/07/26/Handlebarsjs/">Handlebarsjs</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>date: 2015-07-26 16:28:39</p>
+<h2 id="什么是Handlebarsjs?">什么是Handlebarsjs?</h2><ul>
+<li>Handlebars是一个Javascript模板引擎，轻松高效的编写语义化模板</li>
+<li>简单地说只要你定义一个模版，提供一个json对象，handlebars就能吧json对象放到你所给的模版中</li>
+<li>这样能将Web前端的视图和代码分离，降低两者之间耦合  </li>
+</ul>
+<h2 id="如何告诉Handlebarsjs你要用哪个模板？">如何告诉Handlebarsjs你要用哪个模板？</h2><pre><code>只需要这么一句就可以给Handlebarsjs传递一个模板
+    <span class="keyword">var</span> source   = $(<span class="string">"#entry-template"</span>).html();
+</code></pre><p>模板可以写在HTML的\<body\>标签中，也可以写在\<script\>标签中，分别如下:  </script\></body\></p>
+<pre><code><span class="tag">&lt;<span class="title">body</span>&gt;</span>中：   <span class="tag">&lt;<span class="title">任何标签x</span> <span class="attribute">id</span>=<span class="value">"entry-template"</span>&gt;</span>模板信息<span class="tag">&lt;/<span class="title">x</span>&gt;</span>  
+<span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="applescript">中： &lt;<span class="keyword">script</span> <span class="property">id</span>=<span class="string">"entry-template"</span> type=<span class="string">"text/x-handlebars-template"</span>&gt;模板信息</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+</code></pre><h2 id="Handlebarsjs如何使用模板？">Handlebarsjs如何使用模板？</h2><pre><code>获取模板后首先需要对模板进行编译：
+    <span class="keyword">var</span> <span class="keyword">template</span> = <span class="type">Handlebars</span>.compile(source);
+然后通过 <span class="keyword">var</span> <span class="literal">result</span> = temolate(对象<span class="type">Json</span>);  即可获得填好数据的<span class="type">DOM</span>结构
+最后通过$(<span class="string">"#"</span>).before / .html / .after(<span class="literal">result</span>) 即可将结果渲染到指定<span class="type">DOM</span>结构前/上/后
+</code></pre><hr>
+<h2 id="好了，用法应该很清晰了，下面就是在_“模板信息”_中深入了">好了，用法应该很清晰了，下面就是在 “模板信息” 中深入了</h2><p>查看更多资料: <a href="http://segmentfault.com/a/1190000000342636?from=androidqq" title="Handlebarsjs 中文" target="_blank" rel="external">Handlebarsjs 中文</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/07/26/Handlebarsjs/" data-id="cick9lfao0000hqkyjbnxlull" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-markdown" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/07/26/markdown/" class="article-date">
-  <time datetime="2015-07-26T09:04:08.186Z" itemprop="datePublished">2015-07-26</time>
+  <time datetime="2015-07-26T09:09:30.290Z" itemprop="datePublished">2015-07-26</time>
 </a>
     
   </div>
@@ -84,7 +137,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>date: 2015-07-26 09:19:45</p>
-<h2 id="常用的"><strong> <em>常用的</em> </strong></h2><hr>
+<hr>
 <h2 id="基础">基础</h2><pre><code>基本符号：
     <span class="number">1</span>、<span class="keyword">Markdown符号： </span>*,-,+ （<span class="number">3</span>个符号效果一样） 
     <span class="number">2</span>、空白行表示另起一个段落
@@ -146,67 +199,13 @@ say something
 2、![<span class="link_label">picture</span>][<span class="link_reference">2</span>]  
 
 [<span class="link_reference">2</span>]:<span class="link_url"> http://pic.nipic.com/2007-11-09/2007119122519868_2.jpg  "picture2" </span>
-</code></pre><p><a href="http://www.appinn.com/markdown/" title="markdown" target="_blank" rel="external">查看更多资料 Markdown语法说明</a></p>
+</code></pre><p>查看更多资料: <a href="http://www.appinn.com/markdown/" title="markdown" target="_blank" rel="external">Markdown语法说明</a></p>
 <hr>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/07/26/markdown/" data-id="cick9ghib0001bpkyq9p54xn6" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Handlebarsjs" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/07/26/Handlebarsjs/" class="article-date">
-  <time datetime="2015-07-26T09:04:08.182Z" itemprop="datePublished">2015-07-26</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/07/26/Handlebarsjs/">Handlebarsjs</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>date: 2015-07-26 16:28:39</p>
-<h2 id="什么是Handlebarsjs?">什么是Handlebarsjs?</h2><ul>
-<li>Handlebars是一个Javascript模板引擎，轻松高效的编写语义化模板</li>
-<li>简单地说只要你定义一个模版，提供一个json对象，handlebars就能吧json对象放到你所给的模版中</li>
-<li>这样能将Web前端的视图和代码分离，降低两者之间耦合  </li>
-</ul>
-<h2 id="如何告诉Handlebarsjs你要用哪个模板？">如何告诉Handlebarsjs你要用哪个模板？</h2><pre><code>只需要这么一句就可以给Handlebarsjs传递一个模板
-    <span class="keyword">var</span> source   = $(<span class="string">"#entry-template"</span>).html();
-</code></pre><p>模板可以写在HTML的\<body\>标签中，也可以写在\<script\>标签中，分别如下:  </script\></body\></p>
-<ul>
-<li>a\<body\>中：<br>  \&lt;任何标签x id=”entry-template”>模板信息\  </body\></li>
-<li>a\<script\>中： \<script id="entry-template" type="text/x-handlebars-template" \="">模板信息\</script></script\></li>
-</ul>
-<h2 id="Handlebarsjs如何使用模板？">Handlebarsjs如何使用模板？</h2><pre><code>获取模板后首先需要对模板进行编译：
-    <span class="keyword">var</span> <span class="keyword">template</span> = <span class="type">Handlebars</span>.compile(source);
-然后通过 <span class="keyword">var</span> <span class="literal">result</span> = temolate(对象<span class="type">Json</span>);  即可获得填好数据的<span class="type">DOM</span>结构
-最后通过$(<span class="string">"#"</span>).before / .html / .after(<span class="literal">result</span>) 即可将结果渲染到指定<span class="type">DOM</span>结构前/上/后
-</code></pre><p><a href="http://segmentfault.com/a/1190000000342636?from=androidqq" title="Handlebarsjs 中文" target="_blank" rel="external">查看更多资料 Handlebarsjs 中文</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/07/26/Handlebarsjs/" data-id="cick9ghh70000bpky0fqbsrmi" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/07/26/markdown/" data-id="cick9lfcb0001hqkynasorf87" class="article-share-link">Share</a>
       
       
     </footer>
@@ -243,11 +242,11 @@ say something
       <ul>
         
           <li>
-            <a href="/2015/07/26/markdown/">markdown</a>
+            <a href="/2015/07/26/Handlebarsjs/">Handlebarsjs</a>
           </li>
         
           <li>
-            <a href="/2015/07/26/Handlebarsjs/">Handlebarsjs</a>
+            <a href="/2015/07/26/markdown/">markdown</a>
           </li>
         
       </ul>
