@@ -61,48 +61,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-welcome" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/07/26/welcome/" class="article-date">
-  <time datetime="2015-07-26T02:58:45.203Z" itemprop="datePublished">2015-07-26</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/07/26/welcome/">for the beginning</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="最近在努力学习各类工具">最近在努力学习各类工具</h3><p><code>markdown也不是很会写 努力学习中！</code></p>
-<p>查看学习小组的活动场地: <a href="http://w2c203.github.io/Practice/" target="_blank" rel="external">Writing</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/07/26/welcome/" data-id="cicjwd1f8000045kybab4tjx0" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
     <article id="post-markdown" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/07/26/markdown/" class="article-date">
-  <time datetime="2015-07-26T02:55:58.047Z" itemprop="datePublished">2015-07-26</time>
+  <time datetime="2015-07-26T07:18:09.538Z" itemprop="datePublished">2015-07-26</time>
 </a>
     
   </div>
@@ -122,8 +84,22 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>date: 2015-07-26 09:19:45</p>
-<p><strong> <em>常用的</em> </strong></p>
-<ul>
+<h2 id="常用的"><strong> <em>常用的</em> </strong></h2><hr>
+<h2 id="基础">基础</h2><pre><code>基本符号：
+    <span class="number">1</span>、<span class="keyword">Markdown符号： </span>*,-,+ （<span class="number">3</span>个符号效果一样） 
+    <span class="number">2</span>、空白行表示另起一个段落
+    <span class="number">3</span>、`是表示inline代码，tab是用来标记 代码段，分别对应html的<span class="preprocessor">code</span>，pre标签
+换行：
+    <span class="number">1</span>、单一段落( &lt;p&gt;) 用一个空白行
+    <span class="number">2</span>、连续两个空格 会变成一个 &lt;<span class="keyword">br&gt;
+</span>    <span class="number">3</span>、连续<span class="number">3</span>个符号，然后是空行，表示 hr横线
+特殊符号：
+    <span class="number">1</span>、用\来转义，表示文本中的<span class="keyword">markdown符号
+</span>    <span class="number">2</span>、可以在文本种直接使用html标签，但是要注意在使用的时候，前后加上空行
+</code></pre><hr>
+<h2 id="字体:_using_#_*__">字体: using # * _</h2><p>标题      using# 1~6个<br><em>斜体</em>   <em>斜体</em>     (using *word* / _word_)<br><strong>加粗</strong> <strong>加粗</strong>  (using **word** / __word__)</p>
+<hr>
+<h2 id="无序列表:_using_*/+/-">无序列表: using */+/-</h2><ul>
 <li>1<br>  * </li>
 <li>1 <ul>
 <li>空多4格变下一级</li>
@@ -138,21 +114,50 @@
 </li>
 <li>1</li>
 </ul>
+<hr>
+<h2 id="区块:_using_&gt;">区块: using &gt;</h2><blockquote>
+<p>This is a header.</p>
 <blockquote>
-<p>number1</p>
+<p>1.This is the first list item. </p>
 <blockquote>
-<p>1</p>
+<h1 id="third_(can_use_markdown_inside)">third (can use markdown inside)</h1></blockquote>
+<p>1.This is the second list item.</p>
+</blockquote>
+<p>another:<br>another:</p>
+</blockquote>
+<hr>
+<h2 id="代码:_using_blockquote_/_Tab">代码: using blockquote / Tab</h2><blockquote>Here I want to say something in one line. (using blockquote)</blockquote>
+
+<pre><code><span class="keyword">if</span>           (<span class="keyword">using</span> Tab)  
+I
+want
+<span class="built_in">to</span>                     
+say something
+<span class="operator">in</span> N <span class="keyword">lines</span>.                       
+<span class="comment">#123 (*can not* use markdown inside)</span>
+</code></pre><hr>
+<h2 id="链接_与_图片">链接 与 图片</h2><pre><code>链接的<span class="number">3</span>种写法：
+    <span class="number">1</span>、[<span class="keyword">Baidu](http://www.baidu.com/ </span><span class="string">"baidu1"</span>)      
+    <span class="number">2</span>、&lt;http://www.<span class="keyword">baidu.com&gt; </span> 
+    <span class="number">3</span>、[<span class="keyword">Baidu][1] </span> 
+
+     [<span class="number">1</span>]: http://www.<span class="keyword">baidu.com </span> <span class="string">"baidu2"</span> 
+</code></pre><p>  效果如下：</p>
 <blockquote>
-<p>2</p>
+<p><a href="http://www.baidu.com/" title="baidu1" target="_blank" rel="external">Baidu</a><br><a href="http://www.baidu.com/" target="_blank" rel="external">http://www.baidu.com/</a><br><a href="http://www.baidu.com" title="baidu2" target="_blank" rel="external">Baidu</a>  </p>
 </blockquote>
+<pre><code>图片的写法类似（第2种方法除外） 在前面加个！  不能指定宽高 必须指定只能引入html标签<span class="xml"><span class="tag">&lt;<span class="title">img</span>&gt;</span></span>
+1、![<span class="link_label">picture</span>](<span class="link_url">http://www.baidu.com/ "picture1"</span>)        
+2、[<span class="link_label">picture</span>][<span class="link_reference">2</span>]  
+</code></pre><blockquote>
+<p><img width="200" height="200" src="./1.jpg">   </p>
 </blockquote>
-<p>123</p>
-</blockquote>
+<hr>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/07/26/markdown/" data-id="cicjwd1gu000145kyt6mkkyyc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/07/26/markdown/" data-id="cick5nf4600002ekymk0c0nme" class="article-share-link">Share</a>
       
       
     </footer>
@@ -177,7 +182,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -187,10 +192,6 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
-        
-          <li>
-            <a href="/2015/07/26/welcome/">for the beginning</a>
-          </li>
         
           <li>
             <a href="/2015/07/26/markdown/">markdown</a>
