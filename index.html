@@ -64,7 +64,7 @@
     <article id="post-markdown" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/07/26/markdown/" class="article-date">
-  <time datetime="2015-07-26T07:18:09.538Z" itemprop="datePublished">2015-07-26</time>
+  <time datetime="2015-07-26T08:02:58.374Z" itemprop="datePublished">2015-07-26</time>
 </a>
     
   </div>
@@ -99,34 +99,31 @@
 </code></pre><hr>
 <h2 id="字体:_using_#_*__">字体: using # * _</h2><p>标题      using# 1~6个<br><em>斜体</em>   <em>斜体</em>     (using *word* / _word_)<br><strong>加粗</strong> <strong>加粗</strong>  (using **word** / __word__)</p>
 <hr>
-<h2 id="无序列表:_using_*/+/-">无序列表: using */+/-</h2><ul>
-<li>1<br>  * </li>
-<li>1 <ul>
-<li>空多4格变下一级</li>
-</ul>
+<h2 id="有序列表:_using_*/+/-">有序列表: using */+/-</h2><ol>
+<li>something<ol>
+<li>something</li>
+</ol>
 </li>
-<li>1<ul>
-<li>空多4格变下一级<ul>
+<li>something<ol>
+<li>空多4格变下一级<ol>
 <li>再空多4格变下一级</li>
-</ul>
+</ol>
 </li>
-</ul>
+</ol>
 </li>
-<li>1</li>
-</ul>
+<li>something</li>
+</ol>
 <hr>
-<h2 id="区块:_using_&gt;">区块: using &gt;</h2><blockquote>
-<p>This is a header.</p>
-<blockquote>
-<p>1.This is the first list item. </p>
-<blockquote>
-<h1 id="third_(can_use_markdown_inside)">third (can use markdown inside)</h1></blockquote>
-<p>1.This is the second list item.</p>
-</blockquote>
-<p>another:<br>another:</p>
-</blockquote>
-<hr>
-<h2 id="代码:_using_blockquote_/_Tab">代码: using blockquote / Tab</h2><blockquote>Here I want to say something in one line. (using blockquote)</blockquote>
+<h2 id="代码引用:_using_&gt;(一个空格)">代码引用: using &gt;(一个空格)</h2><pre><code>&gt; This <span class="keyword">is</span> a header.
+&gt;&gt; 1.This <span class="keyword">is</span> the first list item. 
+&gt;&gt;&gt; ###third (can use markdown <span class="keyword">inside</span>)        
+
+&gt;&gt; 1.This <span class="keyword">is</span> the second list item.
+
+&gt; another:  
+&gt; another:
+</code></pre><hr>
+<h2 id="区块代码:_using_blockquote_/_Tab">区块代码: using blockquote / Tab</h2><blockquote style="text-align:left">Here I want to say something in one line. (using blockquote)</blockquote>
 
 <pre><code><span class="keyword">if</span>           (<span class="keyword">using</span> Tab)  
 I
@@ -141,23 +138,19 @@ say something
     <span class="number">2</span>、&lt;http://www.<span class="keyword">baidu.com&gt; </span> 
     <span class="number">3</span>、[<span class="keyword">Baidu][1] </span> 
 
-     [<span class="number">1</span>]: http://www.<span class="keyword">baidu.com </span> <span class="string">"baidu2"</span> 
-</code></pre><p>  效果如下：</p>
-<blockquote>
-<p><a href="http://www.baidu.com/" title="baidu1" target="_blank" rel="external">Baidu</a><br><a href="http://www.baidu.com/" target="_blank" rel="external">http://www.baidu.com/</a><br><a href="http://www.baidu.com" title="baidu2" target="_blank" rel="external">Baidu</a>  </p>
-</blockquote>
-<pre><code>图片的写法类似（第2种方法除外） 在前面加个！  不能指定宽高 必须指定只能引入html标签<span class="xml"><span class="tag">&lt;<span class="title">img</span>&gt;</span></span>
-1、![<span class="link_label">picture</span>](<span class="link_url">http://www.baidu.com/ "picture1"</span>)        
-2、[<span class="link_label">picture</span>][<span class="link_reference">2</span>]  
-</code></pre><blockquote>
-<p><img width="200" height="200" src="./1.jpg">   </p>
-</blockquote>
-<hr>
+    [<span class="number">1</span>]: http://www.<span class="keyword">baidu.com </span> <span class="string">"baidu2"</span> 
+</code></pre><p>  效果如下：<br><a href="http://www.baidu.com/" title="baidu1" target="_blank" rel="external">Baidu</a><br><a href="http://www.baidu.com/" target="_blank" rel="external">http://www.baidu.com/</a><br><a href="http://www.baidu.com" title="baidu2" target="_blank" rel="external">Baidu</a>  </p>
+<pre><code>图片的写法类似（第2种方法除外） 在前面加个！  不能指定宽高 要指定只能引入html标签<span class="xml"><span class="tag">&lt;<span class="title">img</span>&gt;</span></span>
+1、![<span class="link_label">picture</span>](<span class="link_url">./1.jpg "picture1"</span>)        
+2、![<span class="link_label">picture</span>][<span class="link_reference">2</span>]  
+
+[<span class="link_reference">2</span>]:<span class="link_url"> http://pic.nipic.com/2007-11-09/2007119122519868_2.jpg  "picture2" </span>
+</code></pre><hr>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/07/26/markdown/" data-id="cick5nf4600002ekymk0c0nme" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/07/26/markdown/" data-id="cick5uoik00009fkyp4va7fg8" class="article-share-link">Share</a>
       
       
     </footer>
