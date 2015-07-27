@@ -64,7 +64,7 @@
     <article id="post-Handlebarsjs" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/07/26/Handlebarsjs/" class="article-date">
-  <time datetime="2015-07-26T09:15:01.022Z" itemprop="datePublished">2015-07-26</time>
+  <time datetime="2015-07-26T12:43:49.917Z" itemprop="datePublished">2015-07-26</time>
 </a>
     
   </div>
@@ -96,15 +96,20 @@
 <span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="applescript">中： &lt;<span class="keyword">script</span> <span class="property">id</span>=<span class="string">"entry-template"</span> type=<span class="string">"text/x-handlebars-template"</span>&gt;模板信息</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
 </code></pre><h2 id="Handlebarsjs如何使用模板？">Handlebarsjs如何使用模板？</h2><pre><code>获取模板后首先需要对模板进行编译：
     <span class="keyword">var</span> <span class="keyword">template</span> = <span class="type">Handlebars</span>.compile(source);
-然后通过 <span class="keyword">var</span> <span class="literal">result</span> = temolate(对象<span class="type">Json</span>);  即可获得填好数据的<span class="type">DOM</span>结构
-最后通过$(<span class="string">"#"</span>).before / .html / .after(<span class="literal">result</span>) 即可将结果渲染到指定<span class="type">DOM</span>结构前/上/后
+然后通过 <span class="keyword">var</span> <span class="literal">result</span> = temolate(<span class="type">Data</span>);  （其中data是一个json对象）即可获得填好数据的<span class="type">DOM</span>结构
+最后通过$(<span class="string">"#"</span>).before / .html / .after(<span class="literal">result</span>)    即可将结果渲染到指定<span class="type">DOM</span>结构前/上/后
 </code></pre><hr>
-<h2 id="好了，用法应该很清晰了，下面就是在_“模板信息”_中深入了">好了，用法应该很清晰了，下面就是在 “模板信息” 中深入了</h2><p>查看更多资料: <a href="http://segmentfault.com/a/1190000000342636?from=androidqq" title="Handlebarsjs 中文" target="_blank" rel="external">Handlebarsjs 中文</a></p>
+<h2 id="好了，基本用法就是这样了，下面就是在_“模板信息”_中深入了">好了，基本用法就是这样了，下面就是在 “模板信息” 中深入了</h2><h3 id="首先得知道这个“模板”是什么">首先得知道这个“模板”是什么</h3><p>Handlebars模板看起来就像是正常的Html，并使用了嵌入的 handlebars 表达式（以 双{ 开始，跟一些内容，以 双} 结束）。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">h1</span>&gt;</span>&#123;&#123; title &#125;&#125;<span class="tag">&lt;/<span class="title">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这时候如果所提供的Data有如下结构： { title: “My New Post” ， … }那么返回的result结构就变成如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="title">h1</span>&gt;</span>My New Post<span class="tag">&lt;/<span class="title">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>如果没有这个“填充信息”，那么双大括号以及其中内容就会置空</p>
+<p>Handlebars的 <strong>双大括号表达式</strong> 会返回一个 <strong>HTML编码 HTML-escape</strong> 过的值 （替换特殊字符，在所有的计算机上正确读取字符）<br>如果不希望Handlebars来编码这些值，使用<strong>三个大括号</strong>即可：这样做的目的之一是所提供的Data对象中可以出现HTML标签信息</p>
+<p>查看更多资料: <a href="http://segmentfault.com/a/1190000000342636?from=androidqq" title="Handlebarsjs 中文" target="_blank" rel="external">Handlebarsjs 中文</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/07/26/Handlebarsjs/" data-id="cick9lfao0000hqkyjbnxlull" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/07/26/Handlebarsjs/" data-id="cickad4u200002okytw6lu9rc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -117,7 +122,7 @@
     <article id="post-markdown" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/07/26/markdown/" class="article-date">
-  <time datetime="2015-07-26T09:09:30.290Z" itemprop="datePublished">2015-07-26</time>
+  <time datetime="2015-07-26T12:19:39.190Z" itemprop="datePublished">2015-07-26</time>
 </a>
     
   </div>
@@ -150,11 +155,10 @@
     <span class="number">1</span>、用\来转义，表示文本中的<span class="keyword">markdown符号
 </span>    <span class="number">2</span>、可以在文本种直接使用html标签，但是要注意在使用的时候，前后加上空行
 </code></pre><hr>
-<h2 id="字体:_using_#_*__">字体: using # * _</h2><p>标题      using# 1~6个<br><em>斜体</em>   <em>斜体</em>     (using *word* / _word_)<br><strong>加粗</strong> <strong>加粗</strong>  (using **word** / __word__)</p>
+<h2 id="字体:_using_#_*__">字体: using # * _</h2><h6 id="标题_(using#_1~6个)">标题                <code>(using# 1~6个)</code></h6><p><em>斜体</em>   <em>斜体</em>     <code>(using *word* / _word_)</code><br><strong>加粗</strong> <strong>加粗</strong>   <code>(using **word** / __word__)</code></p>
 <hr>
-<h2 id="有||无序列表:_using_数字-_||_*/+/-">有||无序列表: using 数字. ||   */+/-</h2><ul>
+<h2 id="有||无序列表:_using_数字-_||_*/+/-">有||无序列表: using 数字. || */+/-</h2><ol>
 <li>something<ol>
-<li>something</li>
 <li>something</li>
 </ol>
 </li>
@@ -166,7 +170,7 @@
 </ol>
 </li>
 <li>something</li>
-</ul>
+</ol>
 <hr>
 <h2 id="代码引用:_using_&gt;(一个空格)">代码引用: using &gt;(一个空格)</h2><pre><code>&gt; This <span class="keyword">is</span> a header.
 &gt;&gt; 1.This <span class="keyword">is</span> the first list item. 
@@ -177,9 +181,8 @@
 &gt; another:  
 &gt; another:
 </code></pre><hr>
-<h2 id="区块代码:_using_blockquote_/_Tab">区块代码: using blockquote / Tab</h2><blockquote style="text-align:left">Here I want to say something in one line. (using blockquote)</blockquote>
-
-<pre><code><span class="keyword">if</span>           (<span class="keyword">using</span> Tab)  
+<h2 id="区块代码:_using_``_||_Tab没有行号_``````_有行号_且在前面3点后加对应语言有对应高亮">区块代码: using `` || Tab没有行号 `````` 有行号 且在前面3点后加对应语言有对应高亮</h2><p><code>Here I want to say something in one line. (using ``)</code></p>
+<pre><code>    <span class="keyword">if</span>           (<span class="keyword">using</span> Tab)  
 I
 want
 <span class="built_in">to</span>                     
@@ -194,18 +197,17 @@ say something
 
     [<span class="number">1</span>]: http://www.<span class="keyword">baidu.com </span> <span class="string">"baidu2"</span> 
 </code></pre><p>  效果如下：<br><a href="http://www.baidu.com/" title="baidu1" target="_blank" rel="external">Baidu</a><br><a href="http://www.baidu.com/" target="_blank" rel="external">http://www.baidu.com/</a><br><a href="http://www.baidu.com" title="baidu2" target="_blank" rel="external">Baidu</a>  </p>
-<pre><code>图片的写法类似（第2种方法除外） 在前面加个！  不能指定宽高 要指定只能引入html标签<span class="xml"><span class="tag">&lt;<span class="title">img</span>&gt;</span></span>
+<pre><code>图片的写法类似（第2种方法除外） 在前面加个！  (不能指定宽高 要指定只能引入html标签<span class="xml"><span class="tag">&lt;<span class="title">img</span>&gt;</span></span>)
 1、![<span class="link_label">picture</span>](<span class="link_url">./1.jpg "picture1"</span>)        
 2、![<span class="link_label">picture</span>][<span class="link_reference">2</span>]  
 
 [<span class="link_reference">2</span>]:<span class="link_url"> http://pic.nipic.com/2007-11-09/2007119122519868_2.jpg  "picture2" </span>
-</code></pre><p>查看更多资料: <a href="http://www.appinn.com/markdown/" title="markdown" target="_blank" rel="external">Markdown语法说明</a></p>
-<hr>
+</code></pre><hr>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/07/26/markdown/" data-id="cick9lfcb0001hqkynasorf87" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/07/26/markdown/" data-id="cickad4v800012oky3jyyi4o4" class="article-share-link">Share</a>
       
       
     </footer>

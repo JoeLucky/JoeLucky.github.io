@@ -23,7 +23,7 @@ Handlebars是一个Javascript模板引擎，轻松高效的编写语义化模板
 这样能将Web前端的视图和代码分离，降低两者之间耦合  
 
 如何告诉Handlebarsjs你要用哪个模板？只需要这么一句就">
-<meta property="og:updated_time" content="2015-07-26T09:15:01.022Z">
+<meta property="og:updated_time" content="2015-07-26T12:43:49.805Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Handlebarsjs">
 <meta name="twitter:description" content="date: 2015-07-26 16:28:39
@@ -81,7 +81,7 @@ Handlebars是一个Javascript模板引擎，轻松高效的编写语义化模板
         <section id="main"><article id="post-Handlebarsjs" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/07/26/Handlebarsjs/" class="article-date">
-  <time datetime="2015-07-26T09:15:01.022Z" itemprop="datePublished">2015-07-26</time>
+  <time datetime="2015-07-26T12:43:49.917Z" itemprop="datePublished">2015-07-26</time>
 </a>
     
   </div>
@@ -113,15 +113,20 @@ Handlebars是一个Javascript模板引擎，轻松高效的编写语义化模板
 <span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="applescript">中： &lt;<span class="keyword">script</span> <span class="property">id</span>=<span class="string">"entry-template"</span> type=<span class="string">"text/x-handlebars-template"</span>&gt;模板信息</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
 </code></pre><h2 id="Handlebarsjs如何使用模板？">Handlebarsjs如何使用模板？</h2><pre><code>获取模板后首先需要对模板进行编译：
     <span class="keyword">var</span> <span class="keyword">template</span> = <span class="type">Handlebars</span>.compile(source);
-然后通过 <span class="keyword">var</span> <span class="literal">result</span> = temolate(对象<span class="type">Json</span>);  即可获得填好数据的<span class="type">DOM</span>结构
-最后通过$(<span class="string">"#"</span>).before / .html / .after(<span class="literal">result</span>) 即可将结果渲染到指定<span class="type">DOM</span>结构前/上/后
+然后通过 <span class="keyword">var</span> <span class="literal">result</span> = temolate(<span class="type">Data</span>);  （其中data是一个json对象）即可获得填好数据的<span class="type">DOM</span>结构
+最后通过$(<span class="string">"#"</span>).before / .html / .after(<span class="literal">result</span>)    即可将结果渲染到指定<span class="type">DOM</span>结构前/上/后
 </code></pre><hr>
-<h2 id="好了，用法应该很清晰了，下面就是在_“模板信息”_中深入了">好了，用法应该很清晰了，下面就是在 “模板信息” 中深入了</h2><p>查看更多资料: <a href="http://segmentfault.com/a/1190000000342636?from=androidqq" title="Handlebarsjs 中文" target="_blank" rel="external">Handlebarsjs 中文</a></p>
+<h2 id="好了，基本用法就是这样了，下面就是在_“模板信息”_中深入了">好了，基本用法就是这样了，下面就是在 “模板信息” 中深入了</h2><h3 id="首先得知道这个“模板”是什么">首先得知道这个“模板”是什么</h3><p>Handlebars模板看起来就像是正常的Html，并使用了嵌入的 handlebars 表达式（以 双{ 开始，跟一些内容，以 双} 结束）。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">h1</span>&gt;</span>&#123;&#123; title &#125;&#125;<span class="tag">&lt;/<span class="title">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这时候如果所提供的Data有如下结构： { title: “My New Post” ， … }那么返回的result结构就变成如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="title">h1</span>&gt;</span>My New Post<span class="tag">&lt;/<span class="title">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>如果没有这个“填充信息”，那么双大括号以及其中内容就会置空</p>
+<p>Handlebars的 <strong>双大括号表达式</strong> 会返回一个 <strong>HTML编码 HTML-escape</strong> 过的值 （替换特殊字符，在所有的计算机上正确读取字符）<br>如果不希望Handlebars来编码这些值，使用<strong>三个大括号</strong>即可：这样做的目的之一是所提供的Data对象中可以出现HTML标签信息</p>
+<p>查看更多资料: <a href="http://segmentfault.com/a/1190000000342636?from=androidqq" title="Handlebarsjs 中文" target="_blank" rel="external">Handlebarsjs 中文</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/07/26/Handlebarsjs/" data-id="cick9lfao0000hqkyjbnxlull" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/07/26/Handlebarsjs/" data-id="cickad4u200002okytw6lu9rc" class="article-share-link">Share</a>
       
       
     </footer>
