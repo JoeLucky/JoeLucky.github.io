@@ -64,7 +64,7 @@
     <article id="post-git" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/08/15/git/" class="article-date">
-  <time datetime="2015-08-15T08:07:18.917Z" itemprop="datePublished">2015-08-15</time>
+  <time datetime="2015-08-15T08:18:57.373Z" itemprop="datePublished">2015-08-15</time>
 </a>
     
   </div>
@@ -111,16 +111,19 @@
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git remote -v</span><br><span class="line">origin	git@github<span class="class">.com</span>:JoeLucky/Practice<span class="class">.git</span> (fetch)</span><br><span class="line">origin	git@github<span class="class">.com</span>:JoeLucky/Practice<span class="class">.git</span> (push)</span><br></pre></td></tr></table></figure>
 <p>以上两行代码分别代表本地进行git pull 和 git push 所关联的远端库。因为我们的项目副本已经过期，所以我们需要添加一个最新的源项目关联至我们的本地库<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git remote add upstream git@github<span class="class">.com</span>:W2C203/Practice<span class="class">.git</span></span><br><span class="line"><span class="comment">//命令格式：git remote add [upstream] [url]，upstream是自定义的远端repo name，url为源项目地址。</span></span><br></pre></td></tr></table></figure></p>
 <p>这个时候我们再查看本地的远端库情况：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git remote -v</span><br><span class="line">origin	git@github<span class="class">.com</span>:JoeLucky/Practice<span class="class">.git</span> (fetch)</span><br><span class="line">origin	git@github<span class="class">.com</span>:JoeLucky/Practice<span class="class">.git</span> (push)</span><br><span class="line">upstream	git@github<span class="class">.com</span>:W2C203/Practice<span class="class">.git</span> (fetch)</span><br><span class="line">upstream	git@github<span class="class">.com</span>:W2C203/Practice<span class="class">.git</span> (push)</span><br></pre></td></tr></table></figure></p>
-<p>除了自己本有的副本origin还多了添加的源项目upstream。接下来，我们获取源项目的最新更新<br>(下面的操作其实已经比较基础 因为upstream和origin在pull上的等价地位，只是upstream你不能push而已)<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git fetch upstream</span><br><span class="line"><span class="string">remote:</span> Counting <span class="string">objects:</span> <span class="number">23</span>, done.</span><br><span class="line"><span class="string">remote:</span> Compressing <span class="string">objects:</span> <span class="number">100</span>% (<span class="number">8</span>/<span class="number">8</span>), done.</span><br><span class="line"><span class="string">remote:</span> Total <span class="number">23</span> (delta <span class="number">6</span>), reused <span class="number">6</span> (delta <span class="number">6</span>), pack-reused <span class="number">9</span></span><br><span class="line">Unpacking <span class="string">objects:</span> <span class="number">100</span>% (<span class="number">23</span>/<span class="number">23</span>), done.</span><br><span class="line">来自 github.<span class="string">com:</span>W2C203/Practice</span><br><span class="line"> * [新分支]          gh-pages   -&gt; upstream/gh-pages</span><br><span class="line"> * [新分支]          master     -&gt; upstream/master</span><br></pre></td></tr></table></figure></p>
+<p>除了自己本有的副本origin还多了添加的源项目upstream。接下来，我们获取源项目的最新更新<br>(下面的操作已经比较基础 此时upstream和origin在pull上的操作相同，只是upstream不能push)<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git fetch upstream</span><br><span class="line"><span class="string">remote:</span> Counting <span class="string">objects:</span> <span class="number">23</span>, done.</span><br><span class="line"><span class="string">remote:</span> Compressing <span class="string">objects:</span> <span class="number">100</span>% (<span class="number">8</span>/<span class="number">8</span>), done.</span><br><span class="line"><span class="string">remote:</span> Total <span class="number">23</span> (delta <span class="number">6</span>), reused <span class="number">6</span> (delta <span class="number">6</span>), pack-reused <span class="number">9</span></span><br><span class="line">Unpacking <span class="string">objects:</span> <span class="number">100</span>% (<span class="number">23</span>/<span class="number">23</span>), done.</span><br><span class="line">来自 github.<span class="string">com:</span>W2C203/Practice</span><br><span class="line"> * [新分支]          gh-pages   -&gt; upstream/gh-pages</span><br><span class="line"> * [新分支]          master     -&gt; upstream/master</span><br></pre></td></tr></table></figure></p>
 <p>发现多了两个分支,我们要做的就是在本地将新更新的分支和本地master进行合并<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="operator"><span class="keyword">merge</span> upstream/<span class="keyword">master</span> </span><br><span class="line">更新 <span class="number">82646</span>f6..cc13c02</span></span><br></pre></td></tr></table></figure></p>
 <p>现在我们的local已经和upstream保持了一致，但是，origin还是过期的。最后一步也是基础了，再push到远端即可。<br><code>git push origin master</code><br>这时候在github上就可以pull request了<br>PS：另外有种麻烦的做法是在github上先用直接更新origin，然后pull origin后再push，这样比较麻烦。</p>
-<h3 id="关于冲突">关于冲突</h3><p>上述的pull过程可能会引起冲突（两条分支对同一个文件的同一个文本块进行了不同的修改，并试图合并时，Git不能自动合并的，称之为冲突(conflict)。）最终体现如下：<br><figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;&lt;&lt;&lt;&lt;&lt;&lt; <span class="attribute">HEAD</span></span><br><span class="line"></span><br><span class="line"> 当前分支中的内容</span><br><span class="line"></span><br><span class="line">=<span class="value">======</span></span><br><span class="line"></span><br><span class="line"> 要<span class="attribute">merge</span>过来的另一条分支上的代码</span><br><span class="line"></span><br><span class="line">&gt;</span>&gt;&gt;&gt;&gt;&gt;&gt; dev （分支的名字）</span></span><br></pre></td></tr></table></figure></p>
-<p>git对代码会按行进行审查，哪怕多一个空格也会审查出来，一般来说，删除====与&gt;&gt;&gt;&gt;内的代码以及标记符号即可，不过特殊情况特殊处理，不能一概而论。</p>
+<h3 id="关于冲突">关于冲突</h3><p>上述的pull过程可能会引起冲突（两条分支对同一个文件的同一个文本块进行了不同的修改，并试图合并时，Git不能自动合并的，称之为冲突(conflict)。）最终代码中的体现如下：<br><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</span><br><span class="line"><span class="header"> 当前分支中的内容</span><br><span class="line">=======</span></span><br><span class="line"><span class="code"> 要merge过来的另一条分支上的代码</span></span><br><span class="line">&gt;&gt;&gt;&gt;&gt;&gt;&gt; dev （分支的名字）</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>git对代码会按行进行审查，哪怕多一个空格也会审查出来</li>
+<li>一般来说，删除====与&gt;&gt;&gt;&gt;内的代码以及标记符号即可，不过特殊情况特殊处理，不能一概而论。</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/08/15/git/" data-id="cidcs7il10003c6kyx73ifjc4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/08/15/git/" data-id="cidcsj8ho0003hfkyeh7msmm4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -179,7 +182,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/08/15/圣杯与双飞翼/" data-id="cidcs7ikf0001c6kyxscgxzc2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/08/15/圣杯与双飞翼/" data-id="cidcsj8h70001hfkyp9hc8rpo" class="article-share-link">Share</a>
       
       
     </footer>
@@ -244,7 +247,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/08/15/BFC/" data-id="cidcs7iix0000c6kyw6035zqe" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/08/15/BFC/" data-id="cidcsj8gg0000hfkykbp6hdr2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -342,7 +345,7 @@ say something
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/08/15/markdown/" data-id="cidcs7iky0002c6kyl0w9ytn6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/08/15/markdown/" data-id="cidcsj8hl0002hfkyc86neou4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -400,7 +403,7 @@ say something
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/08/15/Handlebarsjs/" data-id="cidcs7il30004c6kyie7btdd8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/08/15/Handlebarsjs/" data-id="cidcsj8hq0004hfkyann8ek72" class="article-share-link">Share</a>
       
       
     </footer>
