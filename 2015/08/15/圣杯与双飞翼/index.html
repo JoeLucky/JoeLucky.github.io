@@ -5,16 +5,34 @@
   
   <title>圣杯与双飞翼 | JoeLucky&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="date: 2015-08-15">
+  <meta name="description" content="date: 2015-08-15 
+感觉网上没有人总结如题的两个布局的区别
+毋庸置疑，他们都是三列布局，中部自适应 他们形成的原因都是为了让中部（重要的）先加载
+
+从DOM结构上看
+圣杯布局采用的方案（focus on line 1）
+12345&amp;lt;div class=&quot;out-side&quot;&amp;gt;        &amp;lt;div class=&quot;main&quot;&amp;gt;main&amp;lt;/div&amp;gt;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="圣杯与双飞翼">
 <meta property="og:url" content="http://yoursite.com/2015/08/15/圣杯与双飞翼/index.html">
 <meta property="og:site_name" content="JoeLucky's blog">
-<meta property="og:description" content="date: 2015-08-15">
-<meta property="og:updated_time" content="2015-08-15T02:59:29.838Z">
+<meta property="og:description" content="date: 2015-08-15 
+感觉网上没有人总结如题的两个布局的区别
+毋庸置疑，他们都是三列布局，中部自适应 他们形成的原因都是为了让中部（重要的）先加载
+
+从DOM结构上看
+圣杯布局采用的方案（focus on line 1）
+12345&amp;lt;div class=&quot;out-side&quot;&amp;gt;        &amp;lt;div class=&quot;main&quot;&amp;gt;main&amp;lt;/div&amp;gt;">
+<meta property="og:updated_time" content="2015-08-15T03:25:11.114Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="圣杯与双飞翼">
-<meta name="twitter:description" content="date: 2015-08-15">
+<meta name="twitter:description" content="date: 2015-08-15 
+感觉网上没有人总结如题的两个布局的区别
+毋庸置疑，他们都是三列布局，中部自适应 他们形成的原因都是为了让中部（重要的）先加载
+
+从DOM结构上看
+圣杯布局采用的方案（focus on line 1）
+12345&amp;lt;div class=&quot;out-side&quot;&amp;gt;        &amp;lt;div class=&quot;main&quot;&amp;gt;main&amp;lt;/div&amp;gt;">
   
     <link rel="alternative" href="/atom.xml" title="JoeLucky&#39;s blog" type="application/atom+xml">
   
@@ -63,7 +81,7 @@
         <section id="main"><article id="post-圣杯与双飞翼" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/08/15/圣杯与双飞翼/" class="article-date">
-  <time datetime="2015-08-15T02:59:29.886Z" itemprop="datePublished">2015-08-15</time>
+  <time datetime="2015-08-15T03:25:11.190Z" itemprop="datePublished">2015-08-15</time>
 </a>
     
   </div>
@@ -83,11 +101,33 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>date: 2015-08-15 </p>
+<h2 id="感觉网上没有人总结如题的两个布局的区别">感觉网上没有人总结如题的两个布局的区别</h2><ul>
+<li>毋庸置疑，他们都是三列布局，中部自适应 他们形成的原因都是为了让中部（重要的）先加载</li>
+</ul>
+<h2 id="从DOM结构上看">从DOM结构上看</h2><ul>
+<li><p><a href="http://alistapart.com/article/holygrail" title="圣杯布局" target="_blank" rel="external">圣杯布局</a>采用的方案（focus on line 1）</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"out-side"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"main"</span>&gt;</span>main<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"left"</span>&gt;</span>left<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"right"</span>&gt;</span>right<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><a href="http://www.dqqd.me/flying-wing/" title="双飞翼布局" target="_blank" rel="external">双飞翼布局</a>采用的方案（focus on line 1-3）</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"main"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"main-wrap"</span>&gt;</span>main<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"left"</span>&gt;</span>left<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"right"</span>&gt;</span>right<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>ps：上面为了方便说明才给css这么起名字，规范一般不能这么搞。</p>
+<h2 id="布局的CSS实现上看">布局的CSS实现上看</h2><ul>
+<li><p><a href="http://alistapart.com/article/holygrail" title="圣杯布局" target="_blank" rel="external">圣杯布局</a>采用的方案（focus on class out-side、left、right）</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.out-side</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">0</span> <span class="number">190px</span></span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="class">.main</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">float</span>:<span class="value"> left</span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">100%</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">background-color</span>:<span class="value"> <span class="hexcolor">#F00</span></span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="class">.left</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">float</span>:<span class="value"> left</span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">190px</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">margin-left</span>:<span class="value"> -<span class="number">100%</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">position</span>:<span class="value"> relative</span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">right</span>:<span class="value"><span class="number">190px</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">background-color</span>:<span class="value"> <span class="hexcolor">#0F0</span></span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="class">.right</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">float</span>:<span class="value"> left</span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">190px</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">margin-left</span>:<span class="value"> -<span class="number">190px</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">position</span>:<span class="value"> relative</span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">190px</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">background-color</span>:<span class="value"> <span class="hexcolor">#00F</span></span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><a href="http://www.dqqd.me/flying-wing/" title="双飞翼布局" target="_blank" rel="external">双飞翼布局</a>采用的方案（focus on class main-wrap）</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.main</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">float</span>:<span class="value"> left</span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">100%</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">background-color</span>:<span class="value"> <span class="hexcolor">#F00</span></span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="class">.main-wrap</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span> <span class="number">190px</span></span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="class">.left</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">float</span>:<span class="value"> left</span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">190px</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">margin-left</span>:<span class="value"> -<span class="number">100%</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">background-color</span>:<span class="value"> <span class="hexcolor">#0F0</span></span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="class">.right</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">float</span>:<span class="value"> left</span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">190px</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">margin-left</span>:<span class="value"> -<span class="number">190px</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">background-color</span>:<span class="value"> <span class="hexcolor">#00F</span></span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="括号中的focus_on为两布局的区别">括号中的focus on为两布局的区别</h2><p><code>圣杯布局 (在最外层用padding往外挤 然后left right相对定位到正确位置)</code></p>
+<p><code>双飞翼布局(main添加内层包裹 用margin往外挤)</code></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/08/15/圣杯与双飞翼/" data-id="cidch4hz4000110kygbgdtbzd" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/08/15/圣杯与双飞翼/" data-id="cidci66gc00011ykygoge5bsu" class="article-share-link">Share</a>
       
       
     </footer>
@@ -95,15 +135,6 @@
   
     
 <nav id="article-nav">
-  
-    <a href="/2015/08/15/markdown/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          markdown
-        
-      </div>
-    </a>
   
   
     <a href="/2015/08/15/BFC/" id="article-nav-older" class="article-nav-link-wrap">
@@ -133,11 +164,11 @@
       <ul>
         
           <li>
-            <a href="/2015/08/15/test/">test</a>
+            <a href="/2015/08/15/圣杯与双飞翼/">圣杯与双飞翼</a>
           </li>
         
           <li>
-            <a href="/2015/08/15/Handlebarsjs/">Handlebarsjs</a>
+            <a href="/2015/08/15/BFC/">BFC与闭合浮动</a>
           </li>
         
           <li>
@@ -145,11 +176,7 @@
           </li>
         
           <li>
-            <a href="/2015/08/15/圣杯与双飞翼/">圣杯与双飞翼</a>
-          </li>
-        
-          <li>
-            <a href="/2015/08/15/BFC/">BFC与闭合浮动</a>
+            <a href="/2015/08/15/Handlebarsjs/">Handlebarsjs</a>
           </li>
         
       </ul>
