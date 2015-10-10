@@ -13,7 +13,7 @@ linux ubuntu中文1、 apt-get install ××× 用的是ubuntu 这个不说了
     在 /etc/">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Instruction">
-<meta property="og:url" content="http://yoursite.com/2015/08/27/Instruction/index.html">
+<meta property="og:url" content="http://yoursite.com/2015/09/01/Instruction/index.html">
 <meta property="og:site_name" content="JoeLucky's blog">
 <meta property="og:description" content="一些经常用的 又容易忘记的指令，就是一些笔记，加深印象,随时查阅，开发用的都是linux系统
 linux ubuntu中文1、 apt-get install ××× 用的是ubuntu 这个不说了
@@ -21,7 +21,7 @@ linux ubuntu中文1、 apt-get install ××× 用的是ubuntu 这个不说了
     在 ~/.bashrc, ~/.bash_profile, ~/.profile, 或者 ~/.zshrc 文件添加命令
 3、 开机启动
     在 /etc/">
-<meta property="og:updated_time" content="2015-08-27T09:07:15.419Z">
+<meta property="og:updated_time" content="2015-09-01T08:56:04.606Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Instruction">
 <meta name="twitter:description" content="一些经常用的 又容易忘记的指令，就是一些笔记，加深印象,随时查阅，开发用的都是linux系统
@@ -77,8 +77,8 @@ linux ubuntu中文1、 apt-get install ××× 用的是ubuntu 这个不说了
       <div class="outer">
         <section id="main"><article id="post-Instruction" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/08/27/Instruction/" class="article-date">
-  <time datetime="2015-08-27T09:07:15.455Z" itemprop="datePublished">2015-08-27</time>
+    <a href="/2015/09/01/Instruction/" class="article-date">
+  <time datetime="2015-09-01T08:56:04.666Z" itemprop="datePublished">2015-09-01</time>
 </a>
     
   </div>
@@ -109,12 +109,11 @@ linux ubuntu中文1、 apt-get install ××× 用的是ubuntu 这个不说了
 <span class="number">5</span>、 复制文件（目录加-r）以复制到远程的写法为例： scp [-r] distributed_EC/ 用户名@IP地址:./
 </code></pre><h3 id="mysql相关_安装_百度的教程有图～_基本操作_如何设置mysql允许远程登录">mysql相关 <a href="http://www.cnblogs.com/wuhou/archive/2008/09/28/1301071.html" title="mysql" target="_blank" rel="external">安装</a> <a href="http://jingyan.baidu.com/article/425e69e6bbc6c7be14fc1640.html" title="mysql安装(详细)" target="_blank" rel="external">百度的教程有图～</a> <a href="http://www.cnblogs.com/xdpxyxy/archive/2012/11/16/2773662.html" title="mysql基本操作" target="_blank" rel="external">基本操作</a> <a href="http://blog.csdn.net/hunauchenym/article/details/6933038" title="设置mysql可远程登录" target="_blank" rel="external">如何设置mysql允许远程登录</a></h3><pre><code>安装：sudo apt-get <span class="operator"><span class="keyword">install</span> mysql-<span class="keyword">server</span> mysql-client（注意源的配置）
 测试是否安装成功： sudo service mysql restart
-<span class="number">1</span>、mysql -u root -p   登录
-<span class="number">2</span>、显示所有的数据库：<span class="keyword">show</span> <span class="keyword">databases</span>;</span> 显示库中所有的表：<span class="operator"><span class="keyword">show</span> <span class="keyword">tables</span>;</span>显示数据表的结构 <span class="operator"><span class="keyword">describe</span> 表名;</span>
-3、改变当前数据库为mysql：<span class="operator"><span class="keyword">use</span> mysql
-<span class="number">4</span>、修改属性为<span class="keyword">alter</span> <span class="keyword">table</span> testdata（表名）  modify id <span class="built_in">int</span>  auto_increment;</span>
-
-5、远程登录mysql：mysql -h ip -u user -p
+记一些特殊的用法：
+<span class="number">1</span>、修改属性为<span class="keyword">alter</span> <span class="keyword">table</span> 表名 modify 列名 属性值（如<span class="built_in">int</span>  auto_increment）;</span>
+2、删除key（如pri、uni） <span class="operator"><span class="keyword">alter</span> <span class="keyword">table</span> 表名 <span class="keyword">drop</span> <span class="keyword">index</span> 列名;</span>
+3、设置默认值<span class="operator"><span class="keyword">alter</span> <span class="keyword">table</span> 表名 <span class="keyword">alter</span> <span class="keyword">column</span> 列名 <span class="keyword">set</span> <span class="keyword">default</span> 默认值;</span>
+99、远程登录mysql：mysql -h ip -u user -p
     如何设置mysql允许远程登录？
     1、vim /etc/mysql/my.cnf找到bind-address = 127.0.0.1 注释/修改指定IP
     2、重启 MySQL：sudo /etc/init.d/mysql restart
@@ -174,7 +173,7 @@ linux ubuntu中文1、 apt-get install ××× 用的是ubuntu 这个不说了
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/08/27/Instruction/" data-id="cie1299xm0004fuky7gm1il9l" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/09/01/Instruction/" data-id="cifksr1sa0005hfkya5ula5ya" class="article-share-link">Share</a>
       
       
     </footer>
@@ -182,6 +181,15 @@ linux ubuntu中文1、 apt-get install ××× 用的是ubuntu 这个不说了
   
     
 <nav id="article-nav">
+  
+    <a href="/2015/10/10/正则表达式/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          正则表达式
+        
+      </div>
+    </a>
   
   
     <a href="/2015/08/25/git/" id="article-nav-older" class="article-nav-link-wrap">
@@ -211,7 +219,11 @@ linux ubuntu中文1、 apt-get install ××× 用的是ubuntu 这个不说了
       <ul>
         
           <li>
-            <a href="/2015/08/27/Instruction/">Instruction</a>
+            <a href="/2015/10/10/正则表达式/">正则表达式</a>
+          </li>
+        
+          <li>
+            <a href="/2015/09/01/Instruction/">Instruction</a>
           </li>
         
           <li>

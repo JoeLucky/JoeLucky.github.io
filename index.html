@@ -61,10 +61,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-Instruction" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-正则表达式" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/08/27/Instruction/" class="article-date">
-  <time datetime="2015-08-27T09:07:15.455Z" itemprop="datePublished">2015-08-27</time>
+    <a href="/2015/10/10/正则表达式/" class="article-date">
+  <time datetime="2015-10-10T08:47:34.232Z" itemprop="datePublished">2015-10-10</time>
 </a>
     
   </div>
@@ -75,7 +75,49 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/08/27/Instruction/">Instruction</a>
+      <a class="article-title" href="/2015/10/10/正则表达式/">正则表达式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>date: 2015-10-10</p>
+<p>之前研究了挺久，一段时间不用就忘记太多了，放上来备用！<br>[*（任意次）  +（1/多次）  ？（0/1次）]</p>
+<h3 id="判断邮箱：">判断邮箱：</h3><p>/^([a-zA-Z0-9<em>-])+@([a-zA-Z0-9</em>-])+(.[a-zA-Z0-9_-])+$/<br>看起来简单 不过要注意@前必须是一个或者多个单词字符或者是-（这个-经常忘记）</p>
+<h3 id="判断中文字符：">判断中文字符：</h3><p>/[^\u4E00-\u9FA5]/</p>
+<p>在正则表达式中使用 Unicode，必须使用\u开头，接着是字符编码的四位16进制表现形式<br><a href="http://www.cnblogs.com/sosoft/p/3456631.html" target="_blank" rel="external">Unicode中文和特殊字符的编码范围</a><br>如：只能输入全角字符： /[^uFF00-uFFFF]/  [u前的/可以省略]</p>
+<p>查看更多资料: <a href="http://blog.csdn.net/onebigday/article/details/5429868" target="_blank" rel="external">常用正则表达式大全</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/10/10/正则表达式/" data-id="cifksr1rk0001hfky5rmc6qz6" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Instruction" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/09/01/Instruction/" class="article-date">
+  <time datetime="2015-09-01T08:56:04.666Z" itemprop="datePublished">2015-09-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/09/01/Instruction/">Instruction</a>
     </h1>
   
 
@@ -95,12 +137,11 @@
 <span class="number">5</span>、 复制文件（目录加-r）以复制到远程的写法为例： scp [-r] distributed_EC/ 用户名@IP地址:./
 </code></pre><h3 id="mysql相关_安装_百度的教程有图～_基本操作_如何设置mysql允许远程登录">mysql相关 <a href="http://www.cnblogs.com/wuhou/archive/2008/09/28/1301071.html" title="mysql" target="_blank" rel="external">安装</a> <a href="http://jingyan.baidu.com/article/425e69e6bbc6c7be14fc1640.html" title="mysql安装(详细)" target="_blank" rel="external">百度的教程有图～</a> <a href="http://www.cnblogs.com/xdpxyxy/archive/2012/11/16/2773662.html" title="mysql基本操作" target="_blank" rel="external">基本操作</a> <a href="http://blog.csdn.net/hunauchenym/article/details/6933038" title="设置mysql可远程登录" target="_blank" rel="external">如何设置mysql允许远程登录</a></h3><pre><code>安装：sudo apt-get <span class="operator"><span class="keyword">install</span> mysql-<span class="keyword">server</span> mysql-client（注意源的配置）
 测试是否安装成功： sudo service mysql restart
-<span class="number">1</span>、mysql -u root -p   登录
-<span class="number">2</span>、显示所有的数据库：<span class="keyword">show</span> <span class="keyword">databases</span>;</span> 显示库中所有的表：<span class="operator"><span class="keyword">show</span> <span class="keyword">tables</span>;</span>显示数据表的结构 <span class="operator"><span class="keyword">describe</span> 表名;</span>
-3、改变当前数据库为mysql：<span class="operator"><span class="keyword">use</span> mysql
-<span class="number">4</span>、修改属性为<span class="keyword">alter</span> <span class="keyword">table</span> testdata（表名）  modify id <span class="built_in">int</span>  auto_increment;</span>
-
-5、远程登录mysql：mysql -h ip -u user -p
+记一些特殊的用法：
+<span class="number">1</span>、修改属性为<span class="keyword">alter</span> <span class="keyword">table</span> 表名 modify 列名 属性值（如<span class="built_in">int</span>  auto_increment）;</span>
+2、删除key（如pri、uni） <span class="operator"><span class="keyword">alter</span> <span class="keyword">table</span> 表名 <span class="keyword">drop</span> <span class="keyword">index</span> 列名;</span>
+3、设置默认值<span class="operator"><span class="keyword">alter</span> <span class="keyword">table</span> 表名 <span class="keyword">alter</span> <span class="keyword">column</span> 列名 <span class="keyword">set</span> <span class="keyword">default</span> 默认值;</span>
+99、远程登录mysql：mysql -h ip -u user -p
     如何设置mysql允许远程登录？
     1、vim /etc/mysql/my.cnf找到bind-address = 127.0.0.1 注释/修改指定IP
     2、重启 MySQL：sudo /etc/init.d/mysql restart
@@ -160,7 +201,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/08/27/Instruction/" data-id="cie1299xm0004fuky7gm1il9l" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/09/01/Instruction/" data-id="cifksr1sa0005hfkya5ula5ya" class="article-share-link">Share</a>
       
       
     </footer>
@@ -232,7 +273,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/08/25/git/" data-id="cie1299xk0003fuky9uzhwjel" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/08/25/git/" data-id="cifksr1s80004hfkyfubf5b0i" class="article-share-link">Share</a>
       
       
     </footer>
@@ -291,7 +332,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/08/15/圣杯与双飞翼/" data-id="cie1299x20001fuky1ziq9agj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/08/15/圣杯与双飞翼/" data-id="cifksr1s20002hfkyoa6qgl1a" class="article-share-link">Share</a>
       
       
     </footer>
@@ -356,7 +397,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/08/15/BFC/" data-id="cie1299vy0000fukyybas403w" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/08/15/BFC/" data-id="cifksr1l60000hfky6jevc815" class="article-share-link">Share</a>
       
       
     </footer>
@@ -454,7 +495,7 @@ say something
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/08/15/markdown/" data-id="cie1299xg0002fukyhfrg20zw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/08/15/markdown/" data-id="cifksr1s60003hfkyvopliw1w" class="article-share-link">Share</a>
       
       
     </footer>
@@ -512,7 +553,7 @@ say something
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/08/15/Handlebarsjs/" data-id="cie1299xp0005fukyakafxcyo" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/08/15/Handlebarsjs/" data-id="cifksr1sd0006hfkypph0r81b" class="article-share-link">Share</a>
       
       
     </footer>
@@ -535,12 +576,16 @@ say something
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">导航</h3>
+    <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
         
           <li>
-            <a href="/2015/08/27/Instruction/">Instruction</a>
+            <a href="/2015/10/10/正则表达式/">正则表达式</a>
+          </li>
+        
+          <li>
+            <a href="/2015/09/01/Instruction/">Instruction</a>
           </li>
         
           <li>
