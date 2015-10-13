@@ -3,17 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2015/8 | JoeLucky&#39;s blog</title>
+  <title>JSONP跨域原理 | JoeLucky&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Technology &amp;&amp; learning Blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="JoeLucky's blog">
-<meta property="og:url" content="http://yoursite.com/archives/2015/08/index.html">
+  <meta name="description" content="date: 2015-10-13 
+什么是JSONPJSONP(JSON with Padding)是JSON的一种“使用模式”，可用于解决主流浏览器的跨域数据访问的问题。由于同源策略，一般来说位于 server1.example.com 的网页无法与不是 server1.example.com的服务器(含不同的子域名)沟通，而 HTML 的 script 元素是一个例外。利用 script 元素">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JSONP跨域原理">
+<meta property="og:url" content="http://yoursite.com/2015/10/13/jsonp跨域原理/index.html">
 <meta property="og:site_name" content="JoeLucky's blog">
-<meta property="og:description" content="Technology &amp;&amp; learning Blog">
+<meta property="og:description" content="date: 2015-10-13 
+什么是JSONPJSONP(JSON with Padding)是JSON的一种“使用模式”，可用于解决主流浏览器的跨域数据访问的问题。由于同源策略，一般来说位于 server1.example.com 的网页无法与不是 server1.example.com的服务器(含不同的子域名)沟通，而 HTML 的 script 元素是一个例外。利用 script 元素">
+<meta property="og:updated_time" content="2015-10-13T14:53:16.065Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JoeLucky's blog">
-<meta name="twitter:description" content="Technology &amp;&amp; learning Blog">
+<meta name="twitter:title" content="JSONP跨域原理">
+<meta name="twitter:description" content="date: 2015-10-13 
+什么是JSONPJSONP(JSON with Padding)是JSON的一种“使用模式”，可用于解决主流浏览器的跨域数据访问的问题。由于同源策略，一般来说位于 server1.example.com 的网页无法与不是 server1.example.com的服务器(含不同的子域名)沟通，而 HTML 的 script 元素是一个例外。利用 script 元素">
   
     <link rel="alternative" href="/atom.xml" title="JoeLucky&#39;s blog" type="application/atom+xml">
   
@@ -59,96 +63,56 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/08/25/git/" class="archive-article-date">
-  <time datetime="2015-08-25T01:16:57.047Z" itemprop="datePublished">8月 25</time>
+        <section id="main"><article id="post-jsonp跨域原理" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/10/13/jsonp跨域原理/" class="article-date">
+  <time datetime="2015-10-13T14:53:16.101Z" itemprop="datePublished">2015-10-13</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/08/25/git/">git常用操作</a>
+    <h1 class="article-title" itemprop="name">
+      JSONP跨域原理
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/08/15/圣杯与双飞翼/" class="archive-article-date">
-  <time datetime="2015-08-15T03:25:11.190Z" itemprop="datePublished">8月 15</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/08/15/圣杯与双飞翼/">圣杯与双飞翼</a>
-    </h1>
-  
+        <p>date: 2015-10-13 </p>
+<h3 id="什么是JSONP">什么是JSONP</h3><p>JSONP(JSON with Padding)是JSON的一种“使用模式”，可用于解决主流浏览器的跨域数据访问的问题。由于同源策略，一般来说位于 server1.example.com 的网页无法与不是 server1.example.com的服务器<strong>(含不同的子域名)</strong>沟通，而 HTML 的 script 元素是一个例外。利用 script 元素的这个开放策略，网页可以得到从其他来源动态产生的 JSON 资料，而这种使用模式就是所谓的 JSONP。用 JSONP 抓到的资料并不是 JSON，而是任意的JavaScript，用 JavaScript 直译器执行而不是用 JSON 解析器解析。</p>
+<h3 id="原理简述">原理简述</h3><p>首先在客户端注册一个callback, 然后把callback的名字传给服务器。此时，服务器先生成 json 数据。 然后以 javascript 语法的方式，生成一个function， function 名字就是传递上来的参数 jsonp。最后将 json 数据直接以入参的方式，放置到 function 中，这样就生成了一段 js 语法的文档，返回给客户端。</p>
+<p>查看更多资料： <a href="http://www.nowamagic.net/librarys/veda/detail/224" target="_blank" rel="external">JSONP跨域的原理解析</a></p>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/08/15/BFC/" class="archive-article-date">
-  <time datetime="2015-08-15T03:08:15.206Z" itemprop="datePublished">8月 15</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/08/15/BFC/">BFC与闭合浮动</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/08/15/Handlebarsjs/" class="archive-article-date">
-  <time datetime="2015-08-15T02:59:51.950Z" itemprop="datePublished">8月 15</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/10/13/jsonp跨域原理/" data-id="cifphmpu40005awkynh510s6i" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/08/15/Handlebarsjs/">Handlebarsjs</a>
-    </h1>
-  
-
-    </header>
+      
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/10/13/markdown/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">markdown</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
 </section>
         
           <aside id="sidebar">

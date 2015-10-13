@@ -61,10 +61,275 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-jsonp跨域原理" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/10/13/jsonp跨域原理/" class="article-date">
+  <time datetime="2015-10-13T14:53:16.101Z" itemprop="datePublished">2015-10-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/10/13/jsonp跨域原理/">JSONP跨域原理</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>date: 2015-10-13 </p>
+<h3 id="什么是JSONP">什么是JSONP</h3><p>JSONP(JSON with Padding)是JSON的一种“使用模式”，可用于解决主流浏览器的跨域数据访问的问题。由于同源策略，一般来说位于 server1.example.com 的网页无法与不是 server1.example.com的服务器<strong>(含不同的子域名)</strong>沟通，而 HTML 的 script 元素是一个例外。利用 script 元素的这个开放策略，网页可以得到从其他来源动态产生的 JSON 资料，而这种使用模式就是所谓的 JSONP。用 JSONP 抓到的资料并不是 JSON，而是任意的JavaScript，用 JavaScript 直译器执行而不是用 JSON 解析器解析。</p>
+<h3 id="原理简述">原理简述</h3><p>首先在客户端注册一个callback, 然后把callback的名字传给服务器。此时，服务器先生成 json 数据。 然后以 javascript 语法的方式，生成一个function， function 名字就是传递上来的参数 jsonp。最后将 json 数据直接以入参的方式，放置到 function 中，这样就生成了一段 js 语法的文档，返回给客户端。</p>
+<p>查看更多资料： <a href="http://www.nowamagic.net/librarys/veda/detail/224" target="_blank" rel="external">JSONP跨域的原理解析</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/10/13/jsonp跨域原理/" data-id="cifphmpu40005awkynh510s6i" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-markdown" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/10/13/markdown/" class="article-date">
+  <time datetime="2015-10-13T14:36:38.798Z" itemprop="datePublished">2015-10-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/10/13/markdown/">markdown</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>date: 2015-07-20 </p>
+<hr>
+<h2 id="基础">基础</h2><pre><code>基本符号：
+    <span class="number">1</span>、<span class="keyword">Markdown符号： </span>*,-,+ （<span class="number">3</span>个符号效果一样） 
+    <span class="number">2</span>、空白行表示另起一个段落
+    <span class="number">3</span>、`是表示inline代码，tab是用来标记 代码段，分别对应html的<span class="preprocessor">code</span>，pre标签
+换行：
+    <span class="number">1</span>、单一段落( &lt;p&gt;) 用一个空白行
+    <span class="number">2</span>、连续两个空格 会变成一个 &lt;<span class="keyword">br&gt;
+</span>    <span class="number">3</span>、连续<span class="number">3</span>个符号，然后是空行，表示 hr横线
+特殊符号：
+    <span class="number">1</span>、用\来转义，表示文本中的<span class="keyword">markdown符号
+</span>    <span class="number">2</span>、可以在文本种直接使用html标签，但是要注意在使用的时候，前后加上空行
+</code></pre><hr>
+<h2 id="字体:_using_#_*__">字体: using # * _</h2><h6 id="标题_(using#_1~6个)">标题                <code>(using# 1~6个)</code></h6><p><em>斜体</em>   <em>斜体</em>     <code>(using *word* / _word_)</code><br><strong>加粗</strong> <strong>加粗</strong>   <code>(using **word** / __word__)</code></p>
+<hr>
+<h2 id="有||无序列表:_using_数字-_||_*/+/-">有||无序列表: using 数字. || */+/-</h2><ol>
+<li>something<ol>
+<li>something</li>
+</ol>
+</li>
+<li>something<ol>
+<li>空多4格变下一级<ol>
+<li>再空多4格变下一级</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>something</li>
+</ol>
+<hr>
+<h2 id="代码引用:_using_&gt;(一个空格)">代码引用: using &gt;(一个空格)</h2><pre><code>&gt; This <span class="keyword">is</span> a header.
+&gt;&gt; 1.This <span class="keyword">is</span> the first list item. 
+&gt;&gt;&gt; ###third (can use markdown <span class="keyword">inside</span>)        
+
+&gt;&gt; 1.This <span class="keyword">is</span> the second list item.
+
+&gt; another:  
+&gt; another:
+</code></pre><hr>
+<h2 id="区块代码:_using_``_||_Tab没有行号_``````_有行号_且在前面3点后加对应语言有对应高亮">区块代码: using `` || Tab没有行号 `````` 有行号 且在前面3点后加对应语言有对应高亮</h2><p><code>Here I want to say something in one line. (using ``)</code></p>
+<pre><code>    <span class="keyword">if</span>           (<span class="keyword">using</span> Tab)  
+I
+want
+<span class="built_in">to</span>                     
+say something
+<span class="operator">in</span> N <span class="keyword">lines</span>.                       
+<span class="comment">#123 (*can not* use markdown inside)</span>
+</code></pre><hr>
+<h2 id="链接_与_图片">链接 与 图片</h2><pre><code>链接的<span class="number">3</span>种写法：
+    <span class="number">1</span>、[<span class="keyword">Baidu](http://www.baidu.com/ </span><span class="string">"baidu1"</span>)      
+    <span class="number">2</span>、&lt;http://www.<span class="keyword">baidu.com&gt; </span> 
+    <span class="number">3</span>、[<span class="keyword">Baidu][1] </span> 
+
+    [<span class="number">1</span>]: http://www.<span class="keyword">baidu.com </span> <span class="string">"baidu2"</span> 
+</code></pre><p>  效果如下：<br><a href="http://www.baidu.com/" title="baidu1" target="_blank" rel="external">Baidu</a><br><a href="http://www.baidu.com/" target="_blank" rel="external">http://www.baidu.com/</a><br><a href="http://www.baidu.com" title="baidu2" target="_blank" rel="external">Baidu</a>  </p>
+<pre><code>图片的写法类似（第2种方法除外） 在前面加个！  (不能指定宽高 要指定只能引入html标签<span class="xml"><span class="tag">&lt;<span class="title">img</span>&gt;</span></span>)
+1、![<span class="link_label">picture</span>](<span class="link_url">./1.jpg "picture1"</span>)        
+2、![<span class="link_label">picture</span>][<span class="link_reference">2</span>]  
+
+[<span class="link_reference">2</span>]:<span class="link_url"> http://pic.nipic.com/2007-11-09/2007119122519868_2.jpg  "picture2" </span>
+</code></pre><hr>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/10/13/markdown/" data-id="cifphmpu10004awky62umqjmf" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-javascript优化" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/10/13/javascript优化/" class="article-date">
+  <time datetime="2015-10-13T14:36:22.178Z" itemprop="datePublished">2015-10-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/10/13/javascript优化/">javascript优化</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>date: 2015-10-13 </p>
+<h2 id="脚本位置">脚本位置</h2><pre><code>JavaScript文件开始下载，会阻塞页面其他文件的下载，最佳脚本位置：
+<span class="tag">&lt;<span class="title">body</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">p</span>&gt;</span>Hello world!<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+    <span class="comment">&lt;!-- 以上所有用户可见的DOM结构结束 --&gt;</span>
+    <span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span> <span class="attribute">src</span>=<span class="value">"script1.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span> <span class="attribute">src</span>=<span class="value">"script2.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span> <span class="attribute">src</span>=<span class="value">"script3.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+</code></pre><h2 id="组织脚本(内嵌、外链都一样要限制)">组织脚本(内嵌、外链都一样要限制)</h2><p>  由于每个script标签初始下载时都会<strong>阻塞页面渲染</strong>，所以减少页面包含的script标签数量有助于改善这一情况。<br>  浏览器在解析页面的过程中每遇到一个script标签，都会因<strong>执行脚本</strong>而导致<strong>延时</strong>，因此<strong>最小化延迟时间</strong>将会明显改善页面的总体性能。</p>
+<p>  对外链JavaScript文件，<strong>HTTP请求</strong>会带来额外的<strong>性能开销</strong>，单个100Kb优于5个20Kb文件。减少页面中外链脚本的数量将会改善性能。</p>
+<h2 id="无阻塞的脚本">无阻塞的脚本</h2><h4 id="延迟加载脚本">延迟加载脚本</h4><p>HTML 4 为script标签定义了一个扩展属性：defer。带有 defer 属性的script标签可以放置在文档的任何位置。<br>对应的 Js 文件将在页面解析到script标签时开始下载，但不会执行，直到 DOM 加载完成，即onload事件触发前才会被执行。<br>当一个带有 defer 属性的 Js 文件下载时，它<strong>不会阻塞浏览器的其他进程</strong>，因此这类文件可以与其他资源文件一起并行下载。</p>
+<h4 id="动态脚本元素">动态脚本元素</h4><pre><code>通过标准 DOM 函数创建<span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="applescript">元素
+var <span class="keyword">script</span> = document.createElement (<span class="string">"script"</span>);
+    <span class="keyword">script</span>.type = <span class="string">"text/javascript"</span>;
+    <span class="keyword">script</span>.src = <span class="string">"script1.js"</span>;
+    document.getElementsByTagName(<span class="string">"head"</span>)[<span class="number">0</span>].appendChild(<span class="keyword">script</span>);</span>
+</code></pre><p>此文件当元素添加到页面之后立刻开始下载。重点在于：无论在何处启动下载，文件的下载和运行都不会阻塞其他页面处理过程。</p>
+<h4 id="压缩脚本">压缩脚本</h4><p>JavaScript是一种解释型语言,其所有的源代码都会被提交到客户端浏览器,因此源代码的体积会影响下载速度</p>
+<h4 id="抽空研究下：">抽空研究下：</h4><p><a href="http://www.cnblogs.com/ilian/archive/2012/06/21/js-to-png.html" target="_blank" rel="external">另类压缩 你想不到的压缩方法：将javascript文件压缩成PNG图像存储</a><br>查看更多资料：<a href="http://www.ibm.com/developerworks/cn/web/1308_caiys_jsload/" target="_blank" rel="external">JavaScript 的性能优化：加载和执行</a></p>
+<hr>
+<h2 id="Js语言本身层次方面">Js语言本身层次方面</h2><h4 id="循环">循环</h4><ol>
+<li>for(;;),while(),for(in)三种循环<br>这三种循环中for(in)的效率极差，因为他需要查询散列键，只要可以就应该尽量少用。</li>
+<li>如果要与数组的长度作比较，应该事先把数组的length属性放入一个局部变量中，减少查询次数。</li>
+<li>局部变量和全局变量<br>局部变量的速度要比全局变量的访问速度更快，因为全局变量其实是全局对象的成员，而局部变量是放在函数的栈当中的。</li>
+<li>不使用Eval<br>使用eval相当于在运行时再次调用解释引擎对内容进行运行，需要消耗大量时间。</li>
+<li>少用嵌套对象成员（用局部变量代替）<br>JavaScript的解释性，所以a.b.c.d.e，需要进行至少4次查询操作</li>
+<li>类型转换<ul>
+<li>数字转字符串 用””+1   性能上来说：(“” +) &gt; String() &gt; .toString() &gt; new String()</li>
+<li>浮点数转整型 用Math.floor() 向下取整 /Math.round() /Math.ceil()<br>Math是内部对象，所以Math.floor()其实并没有多少查询方法和调用的时间，速度是最快的。</li>
+</ul>
+</li>
+<li>字符串遍历操作<br>对字符串进行循环操作，譬如替换、查找，应使用正则表达式;Js的循环比较慢，而正则表达式的操作是C语言写的API，性能好。</li>
+<li>DOM相关<ul>
+<li>插入HTML,应指定容器后使用innerHTML，不用document.write</li>
+<li>创建DOM节点，不要使用字符串直接写HTML，无法保证代码的有效性字符串操作效率低,<br>应该用document.createElement()，而如果文档中存在现成的样板节点/需要创建很多元素，应该是用cloneNode()，<br>因为使用createElement()之后，你需要设置多次元素的属性，使用cloneNode()则可以减少属性的设置次数</li>
+<li>需多次重复返问同一DOM节点，应用变量缓存</li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/10/13/javascript优化/" data-id="cifphmpu70006awkyi7jtqke9" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-各种浏览器兼容问题" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/10/13/各种浏览器兼容问题/" class="article-date">
+  <time datetime="2015-10-13T14:36:21.318Z" itemprop="datePublished">2015-10-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/10/13/各种浏览器兼容问题/">各种浏览器兼容问题</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>date:  2015-10-13 </p>
+<p>根据书籍、博客、实践等持续更新中……</p>
+<h2 id="要解决浏览器兼容问题，首先得知道当前使用的是什么浏览器">要解决浏览器兼容问题，首先得知道当前使用的是什么浏览器</h2><p>获取浏览器版本等信息: window.navigator.userAgent<br>  如:  “Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.130 Safari/537.36”<br>各大浏览器内核需知: IE（Trident）;  FF、Netscape（Gecko）;  Safari、chrome(Webkit)<br>另外: Opera7以上抛弃了presto内核，加入Webkit内核大家族;最新的Blink内核……</p>
+<h3 id="当然也可以通过特定浏览器特有的属性或者方法来鉴别（更方便使用）">当然也可以通过特定浏览器特有的属性或者方法来鉴别（更方便使用）</h3><p>如IE9以下的有attachEvent（绑定事件），而一般服从w3c标准的使用addEventListener;<br>(本例的解决方案可以统一使用element.onclick = function(){}的用法，但是需注意赋值会覆盖而不会叠加事件)</p>
+<h2 id="以下分类分条列出各种兼容性问题">以下分类分条列出各种兼容性问题</h2><h3 id="javascript">javascript</h3><ol>
+<li>window.event<br>Question: IE有而FF没有<br>Solve: var event = event || window.event; (此类常规解决方法以下省略不写)</li>
+<li>事件源<br>Question: IE(srcElement)、FF(target)</li>
+<li>鼠标<br>Question: IE(event.x,event.y) (event.offsetX,event.offsetY)[加滚动条]、<br> FF(event.pageX,event.pageY) (event.layerX,event.layerY)[加滚动条]<br>Solve: (event.clientX,event.clientY)[没滚动条时]</li>
+<li>相关元素<br>Question: IE(fromELement、toElement)[分别对应mouseover/out失去（获取）焦点、获得（失去）焦点元素]、<br>FF(relatedTarget)[指另外一个元素，本身用this，如mouseover事件relatedTarget指失去焦点元素，this获得焦点]<br>……</li>
+</ol>
+<h3 id="html/css(这块了解得比较少)">html/css(这块了解得比较少)</h3><ol>
+<li>Question: 不同浏览器的标签默认的外补丁和内补丁不同<br>Behavior: 随便写几个标签，不加样式控制的情况下，各自的margin 和padding差异较大。<br>Solve: *{margin: 0;padding: 0;}</li>
+<li>Question: 图片默认有间距<br>Behavior: 几个img标签放在一起的时候，有些浏览器会有默认的间距，加了通配符也不起作用。<br>Solve: 使用float属性为img布局</li>
+</ol>
+<p>查看更多资料: <a href="http://blog.csdn.net/chuyuqing/article/details/37561313" target="_blank" rel="external">常见浏览器兼容性问题与解决方案</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/10/13/各种浏览器兼容问题/" data-id="cifphmpty0003awkybdsqz72k" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-正则表达式" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/10/10/正则表达式/" class="article-date">
-  <time datetime="2015-10-10T08:47:34.232Z" itemprop="datePublished">2015-10-10</time>
+  <time datetime="2015-10-10T09:27:22.832Z" itemprop="datePublished">2015-10-10</time>
 </a>
     
   </div>
@@ -86,14 +351,16 @@
         <p>date: 2015-10-10</p>
 <p>之前研究了挺久，一段时间不用就忘记太多了，放上来备用！<br>[*（任意次）  +（1/多次）  ？（0/1次）]</p>
 <h3 id="判断邮箱：">判断邮箱：</h3><p>/^([a-zA-Z0-9<em>-])+@([a-zA-Z0-9</em>-])+(.[a-zA-Z0-9_-])+$/<br>看起来简单 不过要注意@前必须是一个或者多个单词字符或者是-（这个-经常忘记）</p>
-<h3 id="判断中文字符：">判断中文字符：</h3><p>/[^\u4E00-\u9FA5]/</p>
+<h3 id="判断中文字符：">判断中文字符：</h3><p>/[^\u4E00-\u9FA5]/<br>匹配双字节字符(包括汉字在内)：[^x00-xff] </p>
 <p>在正则表达式中使用 Unicode，必须使用\u开头，接着是字符编码的四位16进制表现形式<br><a href="http://www.cnblogs.com/sosoft/p/3456631.html" target="_blank" rel="external">Unicode中文和特殊字符的编码范围</a><br>如：只能输入全角字符： /[^uFF00-uFFFF]/  [u前的/可以省略]</p>
-<p>查看更多资料: <a href="http://blog.csdn.net/onebigday/article/details/5429868" target="_blank" rel="external">常用正则表达式大全</a></p>
+<h3 id="检查字符串是否包含连续重复的字母(后向引用)">检查字符串是否包含连续重复的字母(后向引用)</h3><p>/([a-zA-Z])\1/</p>
+<p>衍生：/([a-z])([a-z])\2\1/  (可匹配abba)<br>说明：第一个小括号组名为1,第二个小括号组名为2<br>如果有嵌套的圆括号，顺序是按左括号的次序计算的</p>
+<p>查看更多资料: <a href="http://blog.csdn.net/onebigday/article/details/5429868" target="_blank" rel="external">常用正则表达式大全</a> <a href="http://deerchao.net/tutorials/regex/regex.htm#backreference" target="_blank" rel="external">正则表达式30分钟入门教程</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/10/10/正则表达式/" data-id="cifksr1rk0001hfky5rmc6qz6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/10/10/正则表达式/" data-id="cifphmpto0001awky6ex8xw0e" class="article-share-link">Share</a>
       
       
     </footer>
@@ -201,7 +468,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/09/01/Instruction/" data-id="cifksr1sa0005hfkya5ula5ya" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/09/01/Instruction/" data-id="cifphmpue0008awkyt4z04th3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -273,7 +540,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/08/25/git/" data-id="cifksr1s80004hfkyfubf5b0i" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/08/25/git/" data-id="cifphmpua0007awkymbrcq09e" class="article-share-link">Share</a>
       
       
     </footer>
@@ -332,7 +599,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/08/15/圣杯与双飞翼/" data-id="cifksr1s20002hfkyoa6qgl1a" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/08/15/圣杯与双飞翼/" data-id="cifphmptu0002awkyj2ddoi8p" class="article-share-link">Share</a>
       
       
     </footer>
@@ -397,105 +664,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/08/15/BFC/" data-id="cifksr1l60000hfky6jevc815" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-markdown" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/08/15/markdown/" class="article-date">
-  <time datetime="2015-08-15T03:07:57.682Z" itemprop="datePublished">2015-08-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/08/15/markdown/">markdown</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>date: 2015-07-20 </p>
-<hr>
-<h2 id="基础">基础</h2><pre><code>基本符号：
-    <span class="number">1</span>、<span class="keyword">Markdown符号： </span>*,-,+ （<span class="number">3</span>个符号效果一样） 
-    <span class="number">2</span>、空白行表示另起一个段落
-    <span class="number">3</span>、`是表示inline代码，tab是用来标记 代码段，分别对应html的<span class="preprocessor">code</span>，pre标签
-换行：
-    <span class="number">1</span>、单一段落( &lt;p&gt;) 用一个空白行
-    <span class="number">2</span>、连续两个空格 会变成一个 &lt;<span class="keyword">br&gt;
-</span>    <span class="number">3</span>、连续<span class="number">3</span>个符号，然后是空行，表示 hr横线
-特殊符号：
-    <span class="number">1</span>、用\来转义，表示文本中的<span class="keyword">markdown符号
-</span>    <span class="number">2</span>、可以在文本种直接使用html标签，但是要注意在使用的时候，前后加上空行
-</code></pre><hr>
-<h2 id="字体:_using_#_*__">字体: using # * _</h2><h6 id="标题_(using#_1~6个)">标题                <code>(using# 1~6个)</code></h6><p><em>斜体</em>   <em>斜体</em>     <code>(using *word* / _word_)</code><br><strong>加粗</strong> <strong>加粗</strong>   <code>(using **word** / __word__)</code></p>
-<hr>
-<h2 id="有||无序列表:_using_数字-_||_*/+/-">有||无序列表: using 数字. || */+/-</h2><ol>
-<li>something<ol>
-<li>something</li>
-</ol>
-</li>
-<li>something<ol>
-<li>空多4格变下一级<ol>
-<li>再空多4格变下一级</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>something</li>
-</ol>
-<hr>
-<h2 id="代码引用:_using_&gt;(一个空格)">代码引用: using &gt;(一个空格)</h2><pre><code>&gt; This <span class="keyword">is</span> a header.
-&gt;&gt; 1.This <span class="keyword">is</span> the first list item. 
-&gt;&gt;&gt; ###third (can use markdown <span class="keyword">inside</span>)        
-
-&gt;&gt; 1.This <span class="keyword">is</span> the second list item.
-
-&gt; another:  
-&gt; another:
-</code></pre><hr>
-<h2 id="区块代码:_using_``_||_Tab没有行号_``````_有行号_且在前面3点后加对应语言有对应高亮">区块代码: using `` || Tab没有行号 `````` 有行号 且在前面3点后加对应语言有对应高亮</h2><p><code>Here I want to say something in one line. (using ``)</code></p>
-<pre><code>    <span class="keyword">if</span>           (<span class="keyword">using</span> Tab)  
-I
-want
-<span class="built_in">to</span>                     
-say something
-<span class="operator">in</span> N <span class="keyword">lines</span>.                       
-<span class="comment">#123 (*can not* use markdown inside)</span>
-</code></pre><hr>
-<h2 id="链接_与_图片">链接 与 图片</h2><pre><code>链接的<span class="number">3</span>种写法：
-    <span class="number">1</span>、[<span class="keyword">Baidu](http://www.baidu.com/ </span><span class="string">"baidu1"</span>)      
-    <span class="number">2</span>、&lt;http://www.<span class="keyword">baidu.com&gt; </span> 
-    <span class="number">3</span>、[<span class="keyword">Baidu][1] </span> 
-
-    [<span class="number">1</span>]: http://www.<span class="keyword">baidu.com </span> <span class="string">"baidu2"</span> 
-</code></pre><p>  效果如下：<br><a href="http://www.baidu.com/" title="baidu1" target="_blank" rel="external">Baidu</a><br><a href="http://www.baidu.com/" target="_blank" rel="external">http://www.baidu.com/</a><br><a href="http://www.baidu.com" title="baidu2" target="_blank" rel="external">Baidu</a>  </p>
-<pre><code>图片的写法类似（第2种方法除外） 在前面加个！  (不能指定宽高 要指定只能引入html标签<span class="xml"><span class="tag">&lt;<span class="title">img</span>&gt;</span></span>)
-1、![<span class="link_label">picture</span>](<span class="link_url">./1.jpg "picture1"</span>)        
-2、![<span class="link_label">picture</span>][<span class="link_reference">2</span>]  
-
-[<span class="link_reference">2</span>]:<span class="link_url"> http://pic.nipic.com/2007-11-09/2007119122519868_2.jpg  "picture2" </span>
-</code></pre><hr>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/08/15/markdown/" data-id="cifksr1s60003hfkyvopliw1w" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/08/15/BFC/" data-id="cifphmps20000awkyu8aoevme" class="article-share-link">Share</a>
       
       
     </footer>
@@ -553,7 +722,7 @@ say something
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/08/15/Handlebarsjs/" data-id="cifksr1sd0006hfkypph0r81b" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/08/15/Handlebarsjs/" data-id="cifphmpuj0009awky2gsmyfjf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -581,6 +750,22 @@ say something
       <ul>
         
           <li>
+            <a href="/2015/10/13/jsonp跨域原理/">JSONP跨域原理</a>
+          </li>
+        
+          <li>
+            <a href="/2015/10/13/markdown/">markdown</a>
+          </li>
+        
+          <li>
+            <a href="/2015/10/13/javascript优化/">javascript优化</a>
+          </li>
+        
+          <li>
+            <a href="/2015/10/13/各种浏览器兼容问题/">各种浏览器兼容问题</a>
+          </li>
+        
+          <li>
             <a href="/2015/10/10/正则表达式/">正则表达式</a>
           </li>
         
@@ -598,10 +783,6 @@ say something
         
           <li>
             <a href="/2015/08/15/BFC/">BFC与闭合浮动</a>
-          </li>
-        
-          <li>
-            <a href="/2015/08/15/markdown/">markdown</a>
           </li>
         
           <li>

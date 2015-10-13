@@ -8,8 +8,7 @@
   <meta name="description" content="date: 2015-10-10
 之前研究了挺久，一段时间不用就忘记太多了，放上来备用！[*（任意次）  +（1/多次）  ？（0/1次）]
 判断邮箱：/^([a-zA-Z0-9-])+@([a-zA-Z0-9-])+(.[a-zA-Z0-9_-])+$/看起来简单 不过要注意@前必须是一个或者多个单词字符或者是-（这个-经常忘记）
-判断中文字符：/[^\u4E00-\u9FA5]/
-在正则表达式">
+判断中文字符：/[^\u4E00-\u9FA5]/匹配双字节字符">
 <meta property="og:type" content="article">
 <meta property="og:title" content="正则表达式">
 <meta property="og:url" content="http://yoursite.com/2015/10/10/正则表达式/index.html">
@@ -17,16 +16,14 @@
 <meta property="og:description" content="date: 2015-10-10
 之前研究了挺久，一段时间不用就忘记太多了，放上来备用！[*（任意次）  +（1/多次）  ？（0/1次）]
 判断邮箱：/^([a-zA-Z0-9-])+@([a-zA-Z0-9-])+(.[a-zA-Z0-9_-])+$/看起来简单 不过要注意@前必须是一个或者多个单词字符或者是-（这个-经常忘记）
-判断中文字符：/[^\u4E00-\u9FA5]/
-在正则表达式">
-<meta property="og:updated_time" content="2015-10-10T08:47:34.232Z">
+判断中文字符：/[^\u4E00-\u9FA5]/匹配双字节字符">
+<meta property="og:updated_time" content="2015-10-10T09:27:22.832Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="正则表达式">
 <meta name="twitter:description" content="date: 2015-10-10
 之前研究了挺久，一段时间不用就忘记太多了，放上来备用！[*（任意次）  +（1/多次）  ？（0/1次）]
 判断邮箱：/^([a-zA-Z0-9-])+@([a-zA-Z0-9-])+(.[a-zA-Z0-9_-])+$/看起来简单 不过要注意@前必须是一个或者多个单词字符或者是-（这个-经常忘记）
-判断中文字符：/[^\u4E00-\u9FA5]/
-在正则表达式">
+判断中文字符：/[^\u4E00-\u9FA5]/匹配双字节字符">
   
     <link rel="alternative" href="/atom.xml" title="JoeLucky&#39;s blog" type="application/atom+xml">
   
@@ -75,7 +72,7 @@
         <section id="main"><article id="post-正则表达式" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/10/10/正则表达式/" class="article-date">
-  <time datetime="2015-10-10T08:47:34.232Z" itemprop="datePublished">2015-10-10</time>
+  <time datetime="2015-10-10T09:27:22.832Z" itemprop="datePublished">2015-10-10</time>
 </a>
     
   </div>
@@ -97,14 +94,16 @@
         <p>date: 2015-10-10</p>
 <p>之前研究了挺久，一段时间不用就忘记太多了，放上来备用！<br>[*（任意次）  +（1/多次）  ？（0/1次）]</p>
 <h3 id="判断邮箱：">判断邮箱：</h3><p>/^([a-zA-Z0-9<em>-])+@([a-zA-Z0-9</em>-])+(.[a-zA-Z0-9_-])+$/<br>看起来简单 不过要注意@前必须是一个或者多个单词字符或者是-（这个-经常忘记）</p>
-<h3 id="判断中文字符：">判断中文字符：</h3><p>/[^\u4E00-\u9FA5]/</p>
+<h3 id="判断中文字符：">判断中文字符：</h3><p>/[^\u4E00-\u9FA5]/<br>匹配双字节字符(包括汉字在内)：[^x00-xff] </p>
 <p>在正则表达式中使用 Unicode，必须使用\u开头，接着是字符编码的四位16进制表现形式<br><a href="http://www.cnblogs.com/sosoft/p/3456631.html" target="_blank" rel="external">Unicode中文和特殊字符的编码范围</a><br>如：只能输入全角字符： /[^uFF00-uFFFF]/  [u前的/可以省略]</p>
-<p>查看更多资料: <a href="http://blog.csdn.net/onebigday/article/details/5429868" target="_blank" rel="external">常用正则表达式大全</a></p>
+<h3 id="检查字符串是否包含连续重复的字母(后向引用)">检查字符串是否包含连续重复的字母(后向引用)</h3><p>/([a-zA-Z])\1/</p>
+<p>衍生：/([a-z])([a-z])\2\1/  (可匹配abba)<br>说明：第一个小括号组名为1,第二个小括号组名为2<br>如果有嵌套的圆括号，顺序是按左括号的次序计算的</p>
+<p>查看更多资料: <a href="http://blog.csdn.net/onebigday/article/details/5429868" target="_blank" rel="external">常用正则表达式大全</a> <a href="http://deerchao.net/tutorials/regex/regex.htm#backreference" target="_blank" rel="external">正则表达式30分钟入门教程</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/10/10/正则表达式/" data-id="cifksr1rk0001hfky5rmc6qz6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/10/10/正则表达式/" data-id="cifphmpto0001awky6ex8xw0e" class="article-share-link">Share</a>
       
       
     </footer>
@@ -112,6 +111,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2015/10/13/各种浏览器兼容问题/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          各种浏览器兼容问题
+        
+      </div>
+    </a>
   
   
     <a href="/2015/09/01/Instruction/" id="article-nav-older" class="article-nav-link-wrap">
@@ -141,6 +149,22 @@
       <ul>
         
           <li>
+            <a href="/2015/10/13/jsonp跨域原理/">JSONP跨域原理</a>
+          </li>
+        
+          <li>
+            <a href="/2015/10/13/markdown/">markdown</a>
+          </li>
+        
+          <li>
+            <a href="/2015/10/13/javascript优化/">javascript优化</a>
+          </li>
+        
+          <li>
+            <a href="/2015/10/13/各种浏览器兼容问题/">各种浏览器兼容问题</a>
+          </li>
+        
+          <li>
             <a href="/2015/10/10/正则表达式/">正则表达式</a>
           </li>
         
@@ -158,10 +182,6 @@
         
           <li>
             <a href="/2015/08/15/BFC/">BFC与闭合浮动</a>
-          </li>
-        
-          <li>
-            <a href="/2015/08/15/markdown/">markdown</a>
           </li>
         
           <li>
