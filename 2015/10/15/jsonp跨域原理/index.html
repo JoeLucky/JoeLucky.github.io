@@ -6,18 +6,21 @@
   <title>JSONP跨域原理 | JoeLucky&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="date: 2015-10-13 
-什么是JSONPJSONP(JSON with Padding)是JSON的一种“使用模式”，可用于解决主流浏览器的跨域数据访问的问题。由于同源策略，一般来说位于 server1.example.com 的网页无法与不是 server1.example.com的服务器(含不同的子域名)沟通，而 HTML 的 script 元素是一个例外。利用 script 元素">
+同源策略XmlHttpRequest只允许请求当前源（域名、协议、端口）的资源。
+什么是JSONPJSONP(JSON with Padding)是JSON的一种“使用模式”，通过使用html的script标记来进行跨域请求，并在响应中返回要执行的script代码，其中可以直接使用JSON传递javascript对象，这种跨域的通讯方式称为JSONP。，这项技术">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JSONP跨域原理">
-<meta property="og:url" content="http://yoursite.com/2015/10/13/jsonp跨域原理/index.html">
+<meta property="og:url" content="http://yoursite.com/2015/10/15/jsonp跨域原理/index.html">
 <meta property="og:site_name" content="JoeLucky's blog">
 <meta property="og:description" content="date: 2015-10-13 
-什么是JSONPJSONP(JSON with Padding)是JSON的一种“使用模式”，可用于解决主流浏览器的跨域数据访问的问题。由于同源策略，一般来说位于 server1.example.com 的网页无法与不是 server1.example.com的服务器(含不同的子域名)沟通，而 HTML 的 script 元素是一个例外。利用 script 元素">
-<meta property="og:updated_time" content="2015-10-13T14:53:16.065Z">
+同源策略XmlHttpRequest只允许请求当前源（域名、协议、端口）的资源。
+什么是JSONPJSONP(JSON with Padding)是JSON的一种“使用模式”，通过使用html的script标记来进行跨域请求，并在响应中返回要执行的script代码，其中可以直接使用JSON传递javascript对象，这种跨域的通讯方式称为JSONP。，这项技术">
+<meta property="og:updated_time" content="2015-10-14T17:12:17.134Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JSONP跨域原理">
 <meta name="twitter:description" content="date: 2015-10-13 
-什么是JSONPJSONP(JSON with Padding)是JSON的一种“使用模式”，可用于解决主流浏览器的跨域数据访问的问题。由于同源策略，一般来说位于 server1.example.com 的网页无法与不是 server1.example.com的服务器(含不同的子域名)沟通，而 HTML 的 script 元素是一个例外。利用 script 元素">
+同源策略XmlHttpRequest只允许请求当前源（域名、协议、端口）的资源。
+什么是JSONPJSONP(JSON with Padding)是JSON的一种“使用模式”，通过使用html的script标记来进行跨域请求，并在响应中返回要执行的script代码，其中可以直接使用JSON传递javascript对象，这种跨域的通讯方式称为JSONP。，这项技术">
   
     <link rel="alternative" href="/atom.xml" title="JoeLucky&#39;s blog" type="application/atom+xml">
   
@@ -65,8 +68,8 @@
       <div class="outer">
         <section id="main"><article id="post-jsonp跨域原理" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/10/13/jsonp跨域原理/" class="article-date">
-  <time datetime="2015-10-13T14:53:16.101Z" itemprop="datePublished">2015-10-13</time>
+    <a href="/2015/10/15/jsonp跨域原理/" class="article-date">
+  <time datetime="2015-10-14T17:12:17.170Z" itemprop="datePublished">2015-10-15</time>
 </a>
     
   </div>
@@ -86,14 +89,21 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>date: 2015-10-13 </p>
-<h3 id="什么是JSONP">什么是JSONP</h3><p>JSONP(JSON with Padding)是JSON的一种“使用模式”，可用于解决主流浏览器的跨域数据访问的问题。由于同源策略，一般来说位于 server1.example.com 的网页无法与不是 server1.example.com的服务器<strong>(含不同的子域名)</strong>沟通，而 HTML 的 script 元素是一个例外。利用 script 元素的这个开放策略，网页可以得到从其他来源动态产生的 JSON 资料，而这种使用模式就是所谓的 JSONP。用 JSONP 抓到的资料并不是 JSON，而是任意的JavaScript，用 JavaScript 直译器执行而不是用 JSON 解析器解析。</p>
-<h3 id="原理简述">原理简述</h3><p>首先在客户端注册一个callback, 然后把callback的名字传给服务器。此时，服务器先生成 json 数据。 然后以 javascript 语法的方式，生成一个function， function 名字就是传递上来的参数 jsonp。最后将 json 数据直接以入参的方式，放置到 function 中，这样就生成了一段 js 语法的文档，返回给客户端。</p>
+<h3 id="同源策略">同源策略</h3><p>XmlHttpRequest只允许请求当前源（域名、协议、端口）的资源。</p>
+<h3 id="什么是JSONP">什么是JSONP</h3><p>JSONP(JSON with Padding)是JSON的一种“使用模式”，通过使用html的script标记来进行跨域请求，并在响应中返回要执行的script代码，其中可以直接使用JSON传递javascript对象，这种跨域的通讯方式称为JSONP。，这项技术可以解决跨域提交Ajax请求的问题。</p>
+<h3 id="原理简述">原理简述</h3><ul>
+<li>由于同源策略，一般不同源的页面无法进行沟通，而HTML的script元素是一个例外，script标签的src属性是没有跨域限制的。</li>
+<li>利用 script 元素的这个开放策略，网页可以得到从其他来源动态产生的 JSON 资料，而这种使用模式就是所谓的 JSONP。用 JSONP 抓到的资料并不是 JSON，而是任意的JavaScript，用 JavaScript 直译器执行而不是用 JSON 解析器解析。</li>
+<li>JSONP的最基本的原理是：动态添加一个script标签,设置其src属性。</li>
+</ul>
+<h3 id="具体用法">具体用法</h3><p>假设main.php页面对infor.php页面提交get请求，那么在main.php下运行以下JS代码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> eleScript= <span class="built_in">document</span>.createElement(<span class="string">"script"</span>);</span><br><span class="line">eleScript.type = <span class="string">"text/javascript"</span>;</span><br><span class="line">eleScript.src = <span class="string">"infor.php"</span>;    <span class="comment">//最核心的语句</span></span><br><span class="line"><span class="built_in">document</span>.getElementsByTagName(<span class="string">"HEAD"</span>)[<span class="number">0</span>].appendChild(eleScript);</span><br></pre></td></tr></table></figure></p>
+<p>然后让请求从infor.php返回一段js代码，负责调用main.php的一个callback函数（参数由infor.php提供）</p>
 <p>查看更多资料： <a href="http://www.nowamagic.net/librarys/veda/detail/224" target="_blank" rel="external">JSONP跨域的原理解析</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/10/13/jsonp跨域原理/" data-id="cifphmpu40005awkynh510s6i" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/10/15/jsonp跨域原理/" data-id="cifr1xdl300053pkyk10avz1b" class="article-share-link">Share</a>
       
       
     </footer>
@@ -130,7 +140,7 @@
       <ul>
         
           <li>
-            <a href="/2015/10/13/jsonp跨域原理/">JSONP跨域原理</a>
+            <a href="/2015/10/15/jsonp跨域原理/">JSONP跨域原理</a>
           </li>
         
           <li>
