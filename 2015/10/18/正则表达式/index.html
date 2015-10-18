@@ -3,17 +3,27 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2015/10 | JoeLucky&#39;s blog</title>
+  <title>正则表达式 | JoeLucky&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Technology &amp;&amp; learning Blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="JoeLucky's blog">
-<meta property="og:url" content="http://yoursite.com/archives/2015/10/index.html">
+  <meta name="description" content="date: 2015-10-10
+之前研究了挺久，一段时间不用就忘记太多了，放上来备用！[*（任意次）  +（1/多次）  ？（0/1次）]
+判断邮箱：/^([a-zA-Z0-9-])+@([a-zA-Z0-9-])+(.[a-zA-Z0-9_-])+$/看起来简单 不过要注意@前必须是一个或者多个单词字符或者是-（这个-经常忘记）
+判断中文字符：/[^\u4E00-\u9FA5]/匹配双字节字符">
+<meta property="og:type" content="article">
+<meta property="og:title" content="正则表达式">
+<meta property="og:url" content="http://yoursite.com/2015/10/18/正则表达式/index.html">
 <meta property="og:site_name" content="JoeLucky's blog">
-<meta property="og:description" content="Technology &amp;&amp; learning Blog">
+<meta property="og:description" content="date: 2015-10-10
+之前研究了挺久，一段时间不用就忘记太多了，放上来备用！[*（任意次）  +（1/多次）  ？（0/1次）]
+判断邮箱：/^([a-zA-Z0-9-])+@([a-zA-Z0-9-])+(.[a-zA-Z0-9_-])+$/看起来简单 不过要注意@前必须是一个或者多个单词字符或者是-（这个-经常忘记）
+判断中文字符：/[^\u4E00-\u9FA5]/匹配双字节字符">
+<meta property="og:updated_time" content="2015-10-18T08:04:32.559Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JoeLucky's blog">
-<meta name="twitter:description" content="Technology &amp;&amp; learning Blog">
+<meta name="twitter:title" content="正则表达式">
+<meta name="twitter:description" content="date: 2015-10-10
+之前研究了挺久，一段时间不用就忘记太多了，放上来备用！[*（任意次）  +（1/多次）  ？（0/1次）]
+判断邮箱：/^([a-zA-Z0-9-])+@([a-zA-Z0-9-])+(.[a-zA-Z0-9_-])+$/看起来简单 不过要注意@前必须是一个或者多个单词字符或者是-（这个-经常忘记）
+判断中文字符：/[^\u4E00-\u9FA5]/匹配双字节字符">
   
     <link rel="alternative" href="/atom.xml" title="JoeLucky&#39;s blog" type="application/atom+xml">
   
@@ -59,210 +69,71 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/10/18/div垂直居中/" class="archive-article-date">
-  <time datetime="2015-10-18T09:25:17.599Z" itemprop="datePublished">10月 18</time>
+        <section id="main"><article id="post-正则表达式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/10/18/正则表达式/" class="article-date">
+  <time datetime="2015-10-18T08:04:32.603Z" itemprop="datePublished">2015-10-18</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/10/18/div垂直居中/">div垂直居中</a>
+    <h1 class="article-title" itemprop="name">
+      正则表达式
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/10/18/div水平居中/" class="archive-article-date">
-  <time datetime="2015-10-18T08:36:12.623Z" itemprop="datePublished">10月 18</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/10/18/div水平居中/">div水平居中</a>
-    </h1>
-  
+        <p>date: 2015-10-10</p>
+<p>之前研究了挺久，一段时间不用就忘记太多了，放上来备用！<br>[*（任意次）  +（1/多次）  ？（0/1次）]</p>
+<h3 id="判断邮箱：">判断邮箱：</h3><p>/^([a-zA-Z0-9<em>-])+@([a-zA-Z0-9</em>-])+(.[a-zA-Z0-9_-])+$/<br>看起来简单 不过要注意@前必须是一个或者多个单词字符或者是-（这个-经常忘记）</p>
+<h3 id="判断中文字符：">判断中文字符：</h3><p>/[^\u4E00-\u9FA5]/<br>匹配双字节字符(包括汉字在内)：[^x00-xff] </p>
+<p>在正则表达式中使用 Unicode，必须使用\u开头，接着是字符编码的四位16进制表现形式<br><a href="http://www.cnblogs.com/sosoft/p/3456631.html" target="_blank" rel="external">Unicode中文和特殊字符的编码范围</a><br>如：只能输入全角字符： /[^uFF00-uFFFF]/  [u前的/可以省略]</p>
+<h3 id="检查字符串是否包含连续重复的字母(后向引用)">检查字符串是否包含连续重复的字母(后向引用)</h3><p>/([a-zA-Z])\1/</p>
+<p>衍生：/([a-z])([a-z])\2\1/  (可匹配abba)<br>说明：第一个小括号组名为1,第二个小括号组名为2<br>如果有嵌套的圆括号，顺序是按左括号的次序计算的</p>
+<p>查看更多资料: <a href="http://blog.csdn.net/onebigday/article/details/5429868" target="_blank" rel="external">常用正则表达式大全</a> <a href="http://deerchao.net/tutorials/regex/regex.htm#backreference" target="_blank" rel="external">正则表达式30分钟入门教程</a></p>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/10/18/javascript优化/" class="archive-article-date">
-  <time datetime="2015-10-18T08:06:54.459Z" itemprop="datePublished">10月 18</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/10/18/javascript优化/">javascript优化</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/10/18/git/" class="archive-article-date">
-  <time datetime="2015-10-18T08:06:46.991Z" itemprop="datePublished">10月 18</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/10/18/正则表达式/" data-id="cifwb27z0000383ky3zgus4sn" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/10/18/git/">git常用操作</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/10/18/BFC/" class="archive-article-date">
-  <time datetime="2015-10-18T08:05:58.543Z" itemprop="datePublished">10月 18</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/10/18/BFC/">BFC与浮动闭合</a>
-    </h1>
-  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Basic-knowledge/">Basic knowledge</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Regular-expression/">Regular expression</a></li></ul>
 
-    </header>
+    </footer>
   </div>
-</article>
   
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/10/18/markdown/" class="archive-article-date">
-  <time datetime="2015-10-18T08:05:46.359Z" itemprop="datePublished">10月 18</time>
-</a>
-      
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/10/18/markdown/">markdown</a>
-    </h1>
+    <a href="/2015/10/18/Handlebarsjs/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Handlebarsjs
+        
+      </div>
+    </a>
   
+  
+    <a href="/2015/10/18/圣杯与双飞翼/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">圣杯与双飞翼</div>
+    </a>
+  
+</nav>
 
-    </header>
-  </div>
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/10/18/Handlebarsjs/" class="archive-article-date">
-  <time datetime="2015-10-18T08:05:37.439Z" itemprop="datePublished">10月 18</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/10/18/Handlebarsjs/">Handlebarsjs</a>
-    </h1>
-  
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/10/18/正则表达式/" class="archive-article-date">
-  <time datetime="2015-10-18T08:04:32.603Z" itemprop="datePublished">10月 18</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/10/18/正则表达式/">正则表达式</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/10/18/圣杯与双飞翼/" class="archive-article-date">
-  <time datetime="2015-10-18T08:03:45.651Z" itemprop="datePublished">10月 18</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/10/18/圣杯与双飞翼/">圣杯与双飞翼</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/10/18/各种浏览器兼容问题/" class="archive-article-date">
-  <time datetime="2015-10-18T08:03:31.471Z" itemprop="datePublished">10月 18</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/10/18/各种浏览器兼容问题/">各种浏览器兼容问题</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 </section>
         
           <aside id="sidebar">

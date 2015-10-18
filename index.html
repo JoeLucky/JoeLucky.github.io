@@ -61,10 +61,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-jsonp跨域原理" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-div垂直居中" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/10/15/jsonp跨域原理/" class="article-date">
-  <time datetime="2015-10-14T17:12:17.170Z" itemprop="datePublished">2015-10-15</time>
+    <a href="/2015/10/18/div垂直居中/" class="article-date">
+  <time datetime="2015-10-18T09:25:17.599Z" itemprop="datePublished">2015-10-18</time>
 </a>
     
   </div>
@@ -75,7 +75,102 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/15/jsonp跨域原理/">JSONP跨域原理</a>
+      <a class="article-title" href="/2015/10/18/div垂直居中/">div垂直居中</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>date: 2015-10-18</p>
+<p>垂直居中，其实我平时用的也是比较少，只是最近求职笔试遇到过，小小总结一番。</p>
+<h2 id="单行_height_===_line-height_即可。">单行 height === line-height 即可。</h2><p>另外最好加入overflow:hidden; 可防止内容超出容器或者产生自动换行</p>
+<h2 id="多行简单的方法1">多行简单的方法1</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">div</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">25px</span></span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>类似，根据实际情况也可以用margin + 绝对定位<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="id">#content</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">200px</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">top</span>:<span class="value"> <span class="number">50%</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">margin-top</span>:<span class="value"> -<span class="number">100px</span></span></span>; </span><br><span class="line">    <span class="rule"><span class="attribute">background-color</span>:<span class="value"> <span class="hexcolor">#f00</span></span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>优点：种方法很简单，兼容性很好，但是想想就知道他不是真正意义的居中，不过可以根据实际情况采用<br>缺点：没有足够空间时，元素会消失</p>
+<h2 id="适应性更强的方法2">适应性更强的方法2</h2><h4 id="vertical-align属性">vertical-align属性</h4><p>这个属性只对(X)HTML元素（拥有valign特性）才生效，如表格元素中的td、th、caption等;<br>像div、span这样的元素是没有valign特性的,可通过display:table（父）和display:table-cell（子）模拟</p>
+<h4 id="具体用法">具体用法</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">div</span><span class="id">#wrap</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">400px</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">display</span>:<span class="value"> table</span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">div</span><span class="id">#content</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">vertical-align</span>:<span class="value"> middle</span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">display</span>:<span class="value"> table-cell</span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">background-color</span>:<span class="value"> <span class="hexcolor">#F00</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">760px</span></span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>缺点：需要添加外层包裹、IE不支持table、table-cell</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/10/18/div垂直居中/" data-id="cifwb2843000t83kyfxl7e6gg" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Basic-knowledge/">Basic knowledge</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Css/">Css</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-div水平居中" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/10/18/div水平居中/" class="article-date">
+  <time datetime="2015-10-18T08:36:12.623Z" itemprop="datePublished">2015-10-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/10/18/div水平居中/">div水平居中</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>date: 2015-10-18</p>
+<p>很多时候元素居中可以带来更好的用户体验，下面对div水平居中进行小小的总结。</p>
+<h3 id="使用自动外边距实现居中">使用自动外边距实现居中</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="id">#container</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">100px</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">100px</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">margin-right</span>:<span class="value"> auto</span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">margin-left</span>:<span class="value"> auto</span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">background-color</span>:<span class="value"> red</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>要点：容器是必须指定宽度的</p>
+<h3 id="使用text-align实现居中">使用text-align实现居中</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">body</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">text-align</span>:<span class="value"> center</span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="id">#container</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">100px</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">100px</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">background-color</span>:<span class="value"> red</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>要点：因为text-align是文本属性，如果把它用在了元素定位上。这就会导致body的所有子元素都会居中显示;<br>（需要额外的p {text-align: left;}来使文本内容恢复默认。）<br>另外，需要注意的是，真正遵循标准的浏览器，并不会移动元素，而只是将文本居中;<br>实测：chrome, FF, SF, OP, IE8以上都不支持居中 ，只有IE6可以实现居中效果。这并不是一个好方法。</p>
+<h3 id="组合使用自动外边距和文本对齐">组合使用自动外边距和文本对齐</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">body</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">text-align</span>:<span class="value"> center</span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="id">#container</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">100px</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">100px</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">margin-right</span>:<span class="value"> auto</span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">margin-left</span>:<span class="value"> auto</span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">text-align</span>:<span class="value"> left</span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">background-color</span>:<span class="value"> red</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>要点：结合了前面两种，保证了跨浏览器的支持，但是仍需要写附加的左对齐规则，不很理想。</p>
+<h3 id="负外边距解决方案">负外边距解决方案</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="id">#container</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">left</span>:<span class="value"> <span class="number">50%</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">100px</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">100px</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">margin-left</span>:<span class="value"> -<span class="number">50px</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">background-color</span>:<span class="value"> red</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>要点：使用了绝对定位+负外边距的解决，没有hack，适用性极广，而且最广的浏览器支持。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/10/18/div水平居中/" data-id="cifwb283w000q83kyoio117mc" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Basic-knowledge/">Basic knowledge</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Css/">Css</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-javascript优化" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/10/18/javascript优化/" class="article-date">
+  <time datetime="2015-10-18T08:06:54.459Z" itemprop="datePublished">2015-10-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/10/18/javascript优化/">javascript优化</a>
     </h1>
   
 
@@ -84,23 +179,195 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>date: 2015-10-13 </p>
-<h3 id="同源策略">同源策略</h3><p>XmlHttpRequest只允许请求当前源（域名、协议、端口）的资源。</p>
-<h3 id="什么是JSONP">什么是JSONP</h3><p>JSONP(JSON with Padding)是JSON的一种“使用模式”，通过使用html的script标记来进行跨域请求，并在响应中返回要执行的script代码，其中可以直接使用JSON传递javascript对象，这种跨域的通讯方式称为JSONP。，这项技术可以解决跨域提交Ajax请求的问题。</p>
-<h3 id="原理简述">原理简述</h3><ul>
-<li>由于同源策略，一般不同源的页面无法进行沟通，而HTML的script元素是一个例外，script标签的src属性是没有跨域限制的。</li>
-<li>利用 script 元素的这个开放策略，网页可以得到从其他来源动态产生的 JSON 资料，而这种使用模式就是所谓的 JSONP。用 JSONP 抓到的资料并不是 JSON，而是任意的JavaScript，用 JavaScript 直译器执行而不是用 JSON 解析器解析。</li>
-<li>JSONP的最基本的原理是：动态添加一个script标签,设置其src属性。</li>
+<h2 id="脚本位置">脚本位置</h2><pre><code>JavaScript文件开始下载，会阻塞页面其他文件的下载，最佳脚本位置：
+<span class="tag">&lt;<span class="title">body</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">p</span>&gt;</span>Hello world!<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+    <span class="comment">&lt;!-- 以上所有用户可见的DOM结构结束 --&gt;</span>
+    <span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span> <span class="attribute">src</span>=<span class="value">"script1.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span> <span class="attribute">src</span>=<span class="value">"script2.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span> <span class="attribute">src</span>=<span class="value">"script3.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+</code></pre><h2 id="组织脚本(内嵌、外链都一样要限制)">组织脚本(内嵌、外链都一样要限制)</h2><p>  由于每个script标签初始下载时都会<strong>阻塞页面渲染</strong>，所以减少页面包含的script标签数量有助于改善这一情况。<br>  浏览器在解析页面的过程中每遇到一个script标签，都会因<strong>执行脚本</strong>而导致<strong>延时</strong>，因此<strong>最小化延迟时间</strong>将会明显改善页面的总体性能。</p>
+<p>  对外链JavaScript文件，<strong>HTTP请求</strong>会带来额外的<strong>性能开销</strong>，单个100Kb优于5个20Kb文件。减少页面中外链脚本的数量将会改善性能。</p>
+<h2 id="无阻塞的脚本">无阻塞的脚本</h2><h4 id="延迟加载脚本">延迟加载脚本</h4><p>HTML 4 为script标签定义了一个扩展属性：defer。带有 defer 属性的script标签可以放置在文档的任何位置。<br>对应的 Js 文件将在页面解析到script标签时开始下载，但不会执行，直到 DOM 加载完成，即onload事件触发前才会被执行。<br>当一个带有 defer 属性的 Js 文件下载时，它<strong>不会阻塞浏览器的其他进程</strong>，因此这类文件可以与其他资源文件一起并行下载。</p>
+<h4 id="动态脚本元素">动态脚本元素</h4><pre><code>通过标准 DOM 函数创建<span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="applescript">元素
+var <span class="keyword">script</span> = document.createElement (<span class="string">"script"</span>);
+    <span class="keyword">script</span>.type = <span class="string">"text/javascript"</span>;
+    <span class="keyword">script</span>.src = <span class="string">"script1.js"</span>;
+    document.getElementsByTagName(<span class="string">"head"</span>)[<span class="number">0</span>].appendChild(<span class="keyword">script</span>);</span>
+</code></pre><p>此文件当元素添加到页面之后立刻开始下载。重点在于：无论在何处启动下载，文件的下载和运行都不会阻塞其他页面处理过程。</p>
+<h4 id="压缩脚本">压缩脚本</h4><p>JavaScript是一种解释型语言,其所有的源代码都会被提交到客户端浏览器,因此源代码的体积会影响下载速度</p>
+<h4 id="抽空研究下：">抽空研究下：</h4><p><a href="http://www.cnblogs.com/ilian/archive/2012/06/21/js-to-png.html" target="_blank" rel="external">另类压缩 你想不到的压缩方法：将javascript文件压缩成PNG图像存储</a><br>查看更多资料：<a href="http://www.ibm.com/developerworks/cn/web/1308_caiys_jsload/" target="_blank" rel="external">JavaScript 的性能优化：加载和执行</a></p>
+<hr>
+<h2 id="Js语言本身层次方面">Js语言本身层次方面</h2><h4 id="循环">循环</h4><ol>
+<li>for(;;),while(),for(in)三种循环<br>这三种循环中for(in)的效率极差，因为他需要查询散列键，只要可以就应该尽量少用。</li>
+<li>如果要与数组的长度作比较，应该事先把数组的length属性放入一个局部变量中，减少查询次数。</li>
+<li>局部变量和全局变量<br>局部变量的速度要比全局变量的访问速度更快，因为全局变量其实是全局对象的成员，而局部变量是放在函数的栈当中的。</li>
+<li>不使用Eval<br>使用eval相当于在运行时再次调用解释引擎对内容进行运行，需要消耗大量时间。</li>
+<li>少用嵌套对象成员（用局部变量代替）<br>JavaScript的解释性，所以a.b.c.d.e，需要进行至少4次查询操作</li>
+<li>类型转换<ul>
+<li>数字转字符串 用””+1   性能上来说：(“” +) &gt; String() &gt; .toString() &gt; new String()</li>
+<li>浮点数转整型 用Math.floor() 向下取整 /Math.round() /Math.ceil()<br>Math是内部对象，所以Math.floor()其实并没有多少查询方法和调用的时间，速度是最快的。</li>
 </ul>
-<h3 id="具体用法">具体用法</h3><p>假设main.php页面对infor.php页面提交get请求，那么在main.php下运行以下JS代码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> eleScript= <span class="built_in">document</span>.createElement(<span class="string">"script"</span>);</span><br><span class="line">eleScript.type = <span class="string">"text/javascript"</span>;</span><br><span class="line">eleScript.src = <span class="string">"infor.php"</span>;    <span class="comment">//最核心的语句</span></span><br><span class="line"><span class="built_in">document</span>.getElementsByTagName(<span class="string">"HEAD"</span>)[<span class="number">0</span>].appendChild(eleScript);</span><br></pre></td></tr></table></figure></p>
-<p>然后让请求从infor.php返回一段js代码，负责调用main.php的一个callback函数（参数由infor.php提供）</p>
-<p>查看更多资料： <a href="http://www.nowamagic.net/librarys/veda/detail/224" target="_blank" rel="external">JSONP跨域的原理解析</a></p>
+</li>
+<li>字符串遍历操作<br>对字符串进行循环操作，譬如替换、查找，应使用正则表达式;Js的循环比较慢，而正则表达式的操作是C语言写的API，性能好。</li>
+<li>DOM相关<ul>
+<li>插入HTML,应指定容器后使用innerHTML，不用document.write</li>
+<li>创建DOM节点，不要使用字符串直接写HTML，无法保证代码的有效性字符串操作效率低,<br>应该用document.createElement()，而如果文档中存在现成的样板节点/需要创建很多元素，应该是用cloneNode()，<br>因为使用createElement()之后，你需要设置多次元素的属性，使用cloneNode()则可以减少属性的设置次数</li>
+<li>需多次重复返问同一DOM节点，应用变量缓存</li>
+</ul>
+</li>
+</ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/10/15/jsonp跨域原理/" data-id="cifr1xdl300053pkyk10avz1b" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/10/18/javascript优化/" data-id="cifwb283k000i83ky5am1i4if" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Basic-knowledge/">Basic knowledge</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/">Javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-git" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/10/18/git/" class="article-date">
+  <time datetime="2015-10-18T08:06:46.991Z" itemprop="datePublished">2015-10-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/10/18/git/">git常用操作</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>date: 2015-07-24 </p>
+<h2 id="多人协作的好工具Git_常用指令：">多人协作的好工具Git 常用指令：</h2><p>最近也是用的比较多把，基本的操作也算是用得挺熟了，整理下思绪，以备不时之需。<br>最最基础的操作只稍微列下表：</p>
+<ul>
+<li>git init 与 git clone </li>
+<li>git add *</li>
+<li>git commit -m “提交备注（一定要写详细 方便版本回退）”</li>
+<li>git commit -a 相当于执行前面2句 弹出的备注不写会当作取消执行</li>
+<li>git push [-u] origin master（github上默认版本库origin和分支master）</li>
+<li>git pull origin master (如果上句用了-u 这句可以省略版本库和分支)</li>
+<li>git fetch origin（获取）  &amp;&amp;  git merge origin/master（合并） 这两句等价于上面那句 （通常这样比较安全）</li>
+<li>git branch [-a] 查看本地分支 加-a可查看远程与本地对应情况</li>
+<li>git branch -r -d origin/branch-name // 删除的本地对该远程分支的关</li>
+<li>git checkout [-b] dev 切换分支（-b表示创建）并和远程库关联 </li>
+<li>git status 查看当前状态 只有工作区干净 才可以pull</li>
+<li>git reflog 查看详细的更新历史</li>
+<li>git reset —hard HEAD@{}//IDref2 回退版本 <h2 id="下面列一些相对特殊点的用法：">下面列一些相对特殊点的用法：</h2><h3 id="删除一个远程分支：">删除一个远程分支：</h3>git push origin :branch-name   //将一个空分支push上去 == 删除远程分支 冒号前面是分支名（空）<h3 id="fork的项目副本怎么与源项目的更新保持同步">fork的项目副本怎么与源项目的更新保持同步</h3>什么个情况呢，就是人家的源项目(记作upstream)，你想做点贡献，必须fork到自己的远程库(记作origin) 然后clone下来(记作local)，修改后push到origin然后再pull request请求源项目合并，那么问题来了：</li>
+<li>upstream是人家的项目，你当然无法控制他，这就是“协同开发” ，两种情况：</li>
+</ul>
+<ol>
+<li>对upstream, fork、clone、修改、push 已经完成，此时upstream项目本身已经作了一些修改，此时点pull request，会提示无法自动合并，原因是版本落后了。</li>
+<li>另外一个情况，upstream当前未修改过，pull request成功，但是upstream并没有merge这个pull request，而是自身进行了一些修改，那么这个已经产生的pull request将无效，无法merge，原因还是一样，版本落后了。</li>
+</ol>
+<ul>
+<li>以上两个情况都是local相对upstream版本落后无法合并，那么fork的项目副本怎么与源项目的更新保持同步？方法如下：<br>我们首先查看当前本地版本库与远端库的关联情况</li>
+</ul>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git remote -v</span><br><span class="line">origin	git@github<span class="class">.com</span>:JoeLucky/Practice<span class="class">.git</span> (fetch)</span><br><span class="line">origin	git@github<span class="class">.com</span>:JoeLucky/Practice<span class="class">.git</span> (push)</span><br></pre></td></tr></table></figure>
+<p>以上两行代码分别代表本地进行git pull 和 git push 所关联的远端库。因为我们的项目副本已经过期，所以我们需要添加一个最新的源项目关联至我们的本地库<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git remote add upstream git@github<span class="class">.com</span>:W2C203/Practice<span class="class">.git</span></span><br><span class="line"><span class="comment">//命令格式：git remote add [upstream] [url]，upstream是自定义的远端repo name，url为源项目地址。</span></span><br></pre></td></tr></table></figure></p>
+<p>这个时候我们再查看本地的远端库情况：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git remote -v</span><br><span class="line">origin	git@github<span class="class">.com</span>:JoeLucky/Practice<span class="class">.git</span> (fetch)</span><br><span class="line">origin	git@github<span class="class">.com</span>:JoeLucky/Practice<span class="class">.git</span> (push)</span><br><span class="line">upstream	git@github<span class="class">.com</span>:W2C203/Practice<span class="class">.git</span> (fetch)</span><br><span class="line">upstream	git@github<span class="class">.com</span>:W2C203/Practice<span class="class">.git</span> (push)</span><br></pre></td></tr></table></figure></p>
+<p>除了自己本有的副本origin还多了添加的源项目upstream。接下来，我们获取源项目的最新更新<br>(下面的操作已经比较基础 此时upstream和origin在pull上的操作相同，只是upstream不能push)<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git fetch upstream</span><br><span class="line"><span class="string">remote:</span> Counting <span class="string">objects:</span> <span class="number">23</span>, done.</span><br><span class="line"><span class="string">remote:</span> Compressing <span class="string">objects:</span> <span class="number">100</span>% (<span class="number">8</span>/<span class="number">8</span>), done.</span><br><span class="line"><span class="string">remote:</span> Total <span class="number">23</span> (delta <span class="number">6</span>), reused <span class="number">6</span> (delta <span class="number">6</span>), pack-reused <span class="number">9</span></span><br><span class="line">Unpacking <span class="string">objects:</span> <span class="number">100</span>% (<span class="number">23</span>/<span class="number">23</span>), done.</span><br><span class="line">来自 github.<span class="string">com:</span>W2C203/Practice</span><br><span class="line"> * [新分支]          gh-pages   -&gt; upstream/gh-pages</span><br><span class="line"> * [新分支]          master     -&gt; upstream/master</span><br></pre></td></tr></table></figure></p>
+<p>发现多了两个分支,我们要做的就是在本地将新更新的分支和本地master进行合并<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="operator"><span class="keyword">merge</span> upstream/<span class="keyword">master</span> </span><br><span class="line">更新 <span class="number">82646</span>f6..cc13c02</span></span><br></pre></td></tr></table></figure></p>
+<p>现在我们的local已经和upstream保持了一致，但是，origin还是过期的。最后一步也是基础了，再push到远端即可。<br><code>git push origin master</code><br>这时候在github上就可以pull request了<br>PS：另外有种麻烦的做法是在github上先用直接更新origin，然后pull origin后再push，这样比较麻烦。</p>
+<h3 id="关于冲突">关于冲突</h3><p>上述的pull过程可能会引起冲突（两条分支对同一个文件的同一个文本块进行了不同的修改，并试图合并时，Git不能自动合并的，称之为冲突(conflict)。）最终代码中的体现如下：<br><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</span><br><span class="line"><span class="header"> 当前分支中的内容</span><br><span class="line">=======</span></span><br><span class="line"><span class="code"> 要merge过来的另一条分支上的代码</span></span><br><span class="line">&gt;&gt;&gt;&gt;&gt;&gt;&gt; dev （分支的名字）</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>git对代码会按行进行审查，哪怕多一个空格也会审查出来</li>
+<li>一般来说，删除====与&gt;&gt;&gt;&gt;内的代码以及标记符号即可，不过特殊情况特殊处理，不能一概而论。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/10/18/git/" data-id="cifwb283s000m83ky5f7uepm9" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Basic-knowledge/">Basic knowledge</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-BFC" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/10/18/BFC/" class="article-date">
+  <time datetime="2015-10-18T08:05:58.543Z" itemprop="datePublished">2015-10-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/10/18/BFC/">BFC与浮动闭合</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>date: 2015-08-10</p>
+<h2 id="BFC">BFC</h2><ul>
+<li>一个独立的渲染区域，只有Block-level box参与</li>
+<li>它规定了内部的Block-level Box如何布局，并且与这个区域外部毫不相干。</li>
+</ul>
+<h2 id="哪些元素会生成BFC?">哪些元素会生成BFC?</h2><ul>
+<li>根元素</li>
+<li>float属性不为none</li>
+<li>position为absolute或fixed</li>
+<li>display为inline-block, table-cell, table-caption, flex, inline-flex</li>
+<li>overflow不为visible</li>
+</ul>
+<h2 id="BFC布局规则">BFC布局规则</h2><ul>
+<li>内部的Box会在垂直方向，一个接一个地放置。</li>
+<li>Box垂直方向的距离由margin决定。属于同一个BFC的两个相邻Box的margin会发生重叠</li>
+<li>每个元素的margin box的左边， 与包含块border box的左边相接触(对于从左往右的格式化，否则相反)。即使存在浮动也是如此。</li>
+<li>BFC的区域不会与float box重叠。</li>
+<li>BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此。</li>
+<li>计算BFC的高度时，浮动元素也参与计算</li>
+</ul>
+<h2 id="使父元素产生BFC即可闭合子元素的浮动">使父元素产生BFC即可闭合子元素的浮动</h2><p>存在的问题：每种方式都会额外的改变一些东西：</p>
+<ul>
+<li>float：为了让子元素闭合浮动，父元素也浮动起来了。</li>
+<li>overflow：这里需要注意的一些问题，IE的滚动条是放在盒子模型的里面，而FF则放在外面，这样带来的问题是比较明显的。</li>
+<li>display、position:这两个问题就更加明显了</li>
+</ul>
+<h2 id="闭合浮动的其他方式（伪元素）">闭合浮动的其他方式（伪元素）</h2><p>鉴于上述方式带来的额外影响，伪元素的方法某种程度上讲是更好的选择<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">类名:after&#123; //给父元素添加</span><br><span class="line">    content:"";</span><br><span class="line">    display:table;</span><br><span class="line">    clear:both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>另外在IE上的同效果做法：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.clearfix</span> &#123;</span><br><span class="line">    <span class="attribute">zoom</span>:<span class="number">1</span>;  <span class="comment">//缩放比例</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>查看更多资料: <a href="http://www.cnblogs.com/lhb25/p/inside-block-formatting-ontext.html" title="BFC 神奇背后的原理" target="_blank" rel="external">BFC 神奇背后的原理</a>      <a href="http://www.cnblogs.com/dolphinX/p/3508869.html" title="CSS清浮动处理（Clear与BFC）" target="_blank" rel="external">CSS清浮动处理</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/10/18/BFC/" data-id="cifwb27xz000083kyvh7eixrv" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Basic-knowledge/">Basic knowledge</a></li></ul>
+
     </footer>
   </div>
   
@@ -110,8 +377,8 @@
   
     <article id="post-markdown" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/10/13/markdown/" class="article-date">
-  <time datetime="2015-10-13T14:36:38.798Z" itemprop="datePublished">2015-10-13</time>
+    <a href="/2015/10/18/markdown/" class="article-date">
+  <time datetime="2015-10-18T08:05:46.359Z" itemprop="datePublished">2015-10-18</time>
 </a>
     
   </div>
@@ -122,7 +389,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/13/markdown/">markdown</a>
+      <a class="article-title" href="/2015/10/18/markdown/">markdown</a>
     </h1>
   
 
@@ -196,9 +463,11 @@ say something
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/10/13/markdown/" data-id="cifr1xdl000043pky4ocvw6t6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/10/18/markdown/" data-id="cifwb283e000d83ky5k2bschk" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Technical-tool/">Technical tool</a></li></ul>
+
     </footer>
   </div>
   
@@ -206,10 +475,10 @@ say something
 
 
   
-    <article id="post-javascript优化" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Handlebarsjs" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/10/13/javascript优化/" class="article-date">
-  <time datetime="2015-10-13T14:36:22.178Z" itemprop="datePublished">2015-10-13</time>
+    <a href="/2015/10/18/Handlebarsjs/" class="article-date">
+  <time datetime="2015-10-18T08:05:37.439Z" itemprop="datePublished">2015-10-18</time>
 </a>
     
   </div>
@@ -220,7 +489,7 @@ say something
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/13/javascript优化/">javascript优化</a>
+      <a class="article-title" href="/2015/10/18/Handlebarsjs/">Handlebarsjs</a>
     </h1>
   
 
@@ -228,104 +497,37 @@ say something
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>date: 2015-10-13 </p>
-<h2 id="脚本位置">脚本位置</h2><pre><code>JavaScript文件开始下载，会阻塞页面其他文件的下载，最佳脚本位置：
-<span class="tag">&lt;<span class="title">body</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">p</span>&gt;</span>Hello world!<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
-    <span class="comment">&lt;!-- 以上所有用户可见的DOM结构结束 --&gt;</span>
-    <span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span> <span class="attribute">src</span>=<span class="value">"script1.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span> <span class="attribute">src</span>=<span class="value">"script2.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span> <span class="attribute">src</span>=<span class="value">"script3.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">body</span>&gt;</span>
-</code></pre><h2 id="组织脚本(内嵌、外链都一样要限制)">组织脚本(内嵌、外链都一样要限制)</h2><p>  由于每个script标签初始下载时都会<strong>阻塞页面渲染</strong>，所以减少页面包含的script标签数量有助于改善这一情况。<br>  浏览器在解析页面的过程中每遇到一个script标签，都会因<strong>执行脚本</strong>而导致<strong>延时</strong>，因此<strong>最小化延迟时间</strong>将会明显改善页面的总体性能。</p>
-<p>  对外链JavaScript文件，<strong>HTTP请求</strong>会带来额外的<strong>性能开销</strong>，单个100Kb优于5个20Kb文件。减少页面中外链脚本的数量将会改善性能。</p>
-<h2 id="无阻塞的脚本">无阻塞的脚本</h2><h4 id="延迟加载脚本">延迟加载脚本</h4><p>HTML 4 为script标签定义了一个扩展属性：defer。带有 defer 属性的script标签可以放置在文档的任何位置。<br>对应的 Js 文件将在页面解析到script标签时开始下载，但不会执行，直到 DOM 加载完成，即onload事件触发前才会被执行。<br>当一个带有 defer 属性的 Js 文件下载时，它<strong>不会阻塞浏览器的其他进程</strong>，因此这类文件可以与其他资源文件一起并行下载。</p>
-<h4 id="动态脚本元素">动态脚本元素</h4><pre><code>通过标准 DOM 函数创建<span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="applescript">元素
-var <span class="keyword">script</span> = document.createElement (<span class="string">"script"</span>);
-    <span class="keyword">script</span>.type = <span class="string">"text/javascript"</span>;
-    <span class="keyword">script</span>.src = <span class="string">"script1.js"</span>;
-    document.getElementsByTagName(<span class="string">"head"</span>)[<span class="number">0</span>].appendChild(<span class="keyword">script</span>);</span>
-</code></pre><p>此文件当元素添加到页面之后立刻开始下载。重点在于：无论在何处启动下载，文件的下载和运行都不会阻塞其他页面处理过程。</p>
-<h4 id="压缩脚本">压缩脚本</h4><p>JavaScript是一种解释型语言,其所有的源代码都会被提交到客户端浏览器,因此源代码的体积会影响下载速度</p>
-<h4 id="抽空研究下：">抽空研究下：</h4><p><a href="http://www.cnblogs.com/ilian/archive/2012/06/21/js-to-png.html" target="_blank" rel="external">另类压缩 你想不到的压缩方法：将javascript文件压缩成PNG图像存储</a><br>查看更多资料：<a href="http://www.ibm.com/developerworks/cn/web/1308_caiys_jsload/" target="_blank" rel="external">JavaScript 的性能优化：加载和执行</a></p>
-<hr>
-<h2 id="Js语言本身层次方面">Js语言本身层次方面</h2><h4 id="循环">循环</h4><ol>
-<li>for(;;),while(),for(in)三种循环<br>这三种循环中for(in)的效率极差，因为他需要查询散列键，只要可以就应该尽量少用。</li>
-<li>如果要与数组的长度作比较，应该事先把数组的length属性放入一个局部变量中，减少查询次数。</li>
-<li>局部变量和全局变量<br>局部变量的速度要比全局变量的访问速度更快，因为全局变量其实是全局对象的成员，而局部变量是放在函数的栈当中的。</li>
-<li>不使用Eval<br>使用eval相当于在运行时再次调用解释引擎对内容进行运行，需要消耗大量时间。</li>
-<li>少用嵌套对象成员（用局部变量代替）<br>JavaScript的解释性，所以a.b.c.d.e，需要进行至少4次查询操作</li>
-<li>类型转换<ul>
-<li>数字转字符串 用””+1   性能上来说：(“” +) &gt; String() &gt; .toString() &gt; new String()</li>
-<li>浮点数转整型 用Math.floor() 向下取整 /Math.round() /Math.ceil()<br>Math是内部对象，所以Math.floor()其实并没有多少查询方法和调用的时间，速度是最快的。</li>
+        <p>date: 2015-07-26 </p>
+<h2 id="什么是Handlebarsjs?">什么是Handlebarsjs?</h2><ul>
+<li>Handlebars是一个Javascript模板引擎，轻松高效的编写语义化模板</li>
+<li>简单地说只要你定义一个模版，提供一个json对象，handlebars就能吧json对象放到你所给的模版中</li>
+<li>这样能将Web前端的视图和代码分离，降低两者之间耦合  </li>
 </ul>
-</li>
-<li>字符串遍历操作<br>对字符串进行循环操作，譬如替换、查找，应使用正则表达式;Js的循环比较慢，而正则表达式的操作是C语言写的API，性能好。</li>
-<li>DOM相关<ul>
-<li>插入HTML,应指定容器后使用innerHTML，不用document.write</li>
-<li>创建DOM节点，不要使用字符串直接写HTML，无法保证代码的有效性字符串操作效率低,<br>应该用document.createElement()，而如果文档中存在现成的样板节点/需要创建很多元素，应该是用cloneNode()，<br>因为使用createElement()之后，你需要设置多次元素的属性，使用cloneNode()则可以减少属性的设置次数</li>
-<li>需多次重复返问同一DOM节点，应用变量缓存</li>
-</ul>
-</li>
-</ol>
+<h2 id="如何告诉Handlebarsjs你要用哪个模板？">如何告诉Handlebarsjs你要用哪个模板？</h2><pre><code>只需要这么一句就可以给Handlebarsjs传递一个模板
+    <span class="keyword">var</span> source   = $(<span class="string">"#entry-template"</span>).html();
+</code></pre><p>模板可以写在HTML的\<body\>标签中，也可以写在\<script\>标签中，分别如下:  </script\></body\></p>
+<pre><code><span class="tag">&lt;<span class="title">body</span>&gt;</span>中：   <span class="tag">&lt;<span class="title">任何标签x</span> <span class="attribute">id</span>=<span class="value">"entry-template"</span>&gt;</span>模板信息<span class="tag">&lt;/<span class="title">x</span>&gt;</span>  
+<span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="applescript">中： &lt;<span class="keyword">script</span> <span class="property">id</span>=<span class="string">"entry-template"</span> type=<span class="string">"text/x-handlebars-template"</span>&gt;模板信息</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+</code></pre><h2 id="Handlebarsjs如何使用模板？">Handlebarsjs如何使用模板？</h2><pre><code>获取模板后首先需要对模板进行编译：
+    <span class="keyword">var</span> <span class="keyword">template</span> = <span class="type">Handlebars</span>.compile(source);
+然后通过 <span class="keyword">var</span> <span class="literal">result</span> = temolate(<span class="type">Data</span>);  （其中data是一个json对象）即可获得填好数据的<span class="type">DOM</span>结构
+最后通过$(<span class="string">"#"</span>).before / .html / .after(<span class="literal">result</span>)    即可将结果渲染到指定<span class="type">DOM</span>结构前/上/后
+</code></pre><hr>
+<h2 id="好了，基本用法就是这样了，下面就是在_“模板信息”_中深入了">好了，基本用法就是这样了，下面就是在 “模板信息” 中深入了</h2><h3 id="首先得知道这个“模板”是什么">首先得知道这个“模板”是什么</h3><p>Handlebars模板看起来就像是正常的Html，并使用了嵌入的 handlebars 表达式（以 双{ 开始，跟一些内容，以 双} 结束）。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">h1</span>&gt;</span>&#123;&#123; title &#125;&#125;<span class="tag">&lt;/<span class="title">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这时候如果所提供的Data有如下结构： { title: “My New Post” ， … }那么返回的result结构就变成如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="title">h1</span>&gt;</span>My New Post<span class="tag">&lt;/<span class="title">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>如果没有这个“填充信息”，那么双大括号以及其中内容就会置空</p>
+<p>Handlebars的 <strong>双大括号表达式</strong> 会返回一个 <strong>HTML编码 HTML-escape</strong> 过的值 （替换特殊字符，在所有的计算机上正确读取字符）<br>如果不希望Handlebars来编码这些值，使用<strong>三个大括号</strong>即可：这样做的目的之一是所提供的Data对象中可以出现HTML标签信息</p>
+<p>查看更多资料: <a href="http://segmentfault.com/a/1190000000342636?from=androidqq" title="Handlebarsjs 中文" target="_blank" rel="external">Handlebarsjs 中文</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/10/13/javascript优化/" data-id="cifr1xdl600063pky3iamtej3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/10/18/Handlebarsjs/" data-id="cifwb284e000y83kyzj63g0p9" class="article-share-link">Share</a>
       
       
-    </footer>
-  </div>
-  
-</article>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Technical-tool/">Technical tool</a></li></ul>
 
-
-  
-    <article id="post-各种浏览器兼容问题" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/10/13/各种浏览器兼容问题/" class="article-date">
-  <time datetime="2015-10-13T14:36:21.318Z" itemprop="datePublished">2015-10-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/13/各种浏览器兼容问题/">各种浏览器兼容问题</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>date:  2015-10-13 </p>
-<p>根据书籍、博客、实践等持续更新中……</p>
-<h2 id="要解决浏览器兼容问题，首先得知道当前使用的是什么浏览器">要解决浏览器兼容问题，首先得知道当前使用的是什么浏览器</h2><p>获取浏览器版本等信息: window.navigator.userAgent<br>  如:  “Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.130 Safari/537.36”<br>各大浏览器内核需知: IE（Trident）;  FF、Netscape（Gecko）;  Safari、chrome(Webkit)<br>另外: Opera7以上抛弃了presto内核，加入Webkit内核大家族;最新的Blink内核……</p>
-<h3 id="当然也可以通过特定浏览器特有的属性或者方法来鉴别（更方便使用）">当然也可以通过特定浏览器特有的属性或者方法来鉴别（更方便使用）</h3><p>如IE9以下的有attachEvent（绑定事件），而一般服从w3c标准的使用addEventListener;<br>(本例的解决方案可以统一使用element.onclick = function(){}的用法，但是需注意赋值会覆盖而不会叠加事件)</p>
-<h2 id="以下分类分条列出各种兼容性问题">以下分类分条列出各种兼容性问题</h2><h3 id="javascript">javascript</h3><ol>
-<li>window.event<br>Question: IE有而FF没有<br>Solve: var event = event || window.event; (此类常规解决方法以下省略不写)</li>
-<li>事件源<br>Question: IE(srcElement)、FF(target)</li>
-<li>鼠标<br>Question: IE(event.x,event.y) (event.offsetX,event.offsetY)[加滚动条]、<br> FF(event.pageX,event.pageY) (event.layerX,event.layerY)[加滚动条]<br>Solve: (event.clientX,event.clientY)[没滚动条时]</li>
-<li>相关元素<br>Question: IE(fromELement、toElement)[分别对应mouseover/out失去（获取）焦点、获得（失去）焦点元素]、<br>FF(relatedTarget)[指另外一个元素，本身用this，如mouseover事件relatedTarget指失去焦点元素，this获得焦点]<br>……</li>
-</ol>
-<h3 id="html/css(这块了解得比较少)">html/css(这块了解得比较少)</h3><ol>
-<li>Question: 不同浏览器的标签默认的外补丁和内补丁不同<br>Behavior: 随便写几个标签，不加样式控制的情况下，各自的margin 和padding差异较大。<br>Solve: *{margin: 0;padding: 0;}</li>
-<li>Question: 图片默认有间距<br>Behavior: 几个img标签放在一起的时候，有些浏览器会有默认的间距，加了通配符也不起作用。<br>Solve: 使用float属性为img布局</li>
-</ol>
-<p>查看更多资料: <a href="http://blog.csdn.net/chuyuqing/article/details/37561313" target="_blank" rel="external">常见浏览器兼容性问题与解决方案</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/10/13/各种浏览器兼容问题/" data-id="cifr1xdkw00033pkym7ipyfju" class="article-share-link">Share</a>
-      
-      
     </footer>
   </div>
   
@@ -335,8 +537,8 @@ var <span class="keyword">script</span> = document.createElement (<span class="s
   
     <article id="post-正则表达式" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/10/10/正则表达式/" class="article-date">
-  <time datetime="2015-10-10T09:27:22.832Z" itemprop="datePublished">2015-10-10</time>
+    <a href="/2015/10/18/正则表达式/" class="article-date">
+  <time datetime="2015-10-18T08:04:32.603Z" itemprop="datePublished">2015-10-18</time>
 </a>
     
   </div>
@@ -347,7 +549,7 @@ var <span class="keyword">script</span> = document.createElement (<span class="s
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/10/正则表达式/">正则表达式</a>
+      <a class="article-title" href="/2015/10/18/正则表达式/">正则表达式</a>
     </h1>
   
 
@@ -367,189 +569,11 @@ var <span class="keyword">script</span> = document.createElement (<span class="s
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/10/10/正则表达式/" data-id="cifr1xdji00013pky8amjduz4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/10/18/正则表达式/" data-id="cifwb27z0000383ky3zgus4sn" class="article-share-link">Share</a>
       
       
-    </footer>
-  </div>
-  
-</article>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Basic-knowledge/">Basic knowledge</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Regular-expression/">Regular expression</a></li></ul>
 
-
-  
-    <article id="post-Instruction" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/09/01/Instruction/" class="article-date">
-  <time datetime="2015-09-01T08:56:04.666Z" itemprop="datePublished">2015-09-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/09/01/Instruction/">Instruction</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>一些经常用的 又容易忘记的指令，就是一些笔记，加深印象,随时查阅，开发用的都是linux系统</p>
-<h3 id="linux_ubuntu中文">linux <a href="http://wiki.ubuntu.org.cn/%E9%A6%96%E9%A1%B5" title="ubuntu" target="_blank" rel="external">ubuntu中文</a></h3><pre><code><span class="number">1</span>、 apt-get install ××× 用的是ubuntu 这个不说了
-<span class="number">2</span>、 配置终端启动时自动执行 
-    在 ~/<span class="class">.bashrc</span>, ~/<span class="class">.bash_profile</span>, ~/<span class="class">.profile</span>, 或者 ~/<span class="class">.zshrc</span> 文件添加命令
-<span class="number">3</span>、 开机启动
-    在 /etc/rc<span class="class">.local</span> 文件添加命令
-    以mongoDB服务为例，在其中加入下面一行代码
-    /home/joe/mongodb/bin/mongod --dbpath=/home/joe/mongodbData/db --port <span class="number">27017</span>  
-<span class="number">4</span>、 删除文件（目录加-r）  rm [-rf] 地址         文件夹！！谨慎使用！！  -rf是不进入子目录
-<span class="number">5</span>、 复制文件（目录加-r）以复制到远程的写法为例： scp [-r] distributed_EC/ 用户名@IP地址:./
-</code></pre><h3 id="mysql相关_安装_百度的教程有图～_基本操作_如何设置mysql允许远程登录">mysql相关 <a href="http://www.cnblogs.com/wuhou/archive/2008/09/28/1301071.html" title="mysql" target="_blank" rel="external">安装</a> <a href="http://jingyan.baidu.com/article/425e69e6bbc6c7be14fc1640.html" title="mysql安装(详细)" target="_blank" rel="external">百度的教程有图～</a> <a href="http://www.cnblogs.com/xdpxyxy/archive/2012/11/16/2773662.html" title="mysql基本操作" target="_blank" rel="external">基本操作</a> <a href="http://blog.csdn.net/hunauchenym/article/details/6933038" title="设置mysql可远程登录" target="_blank" rel="external">如何设置mysql允许远程登录</a></h3><pre><code>安装：sudo apt-get <span class="operator"><span class="keyword">install</span> mysql-<span class="keyword">server</span> mysql-client（注意源的配置）
-测试是否安装成功： sudo service mysql restart
-记一些特殊的用法：
-<span class="number">1</span>、修改属性为<span class="keyword">alter</span> <span class="keyword">table</span> 表名 modify 列名 属性值（如<span class="built_in">int</span>  auto_increment）;</span>
-2、删除key（如pri、uni） <span class="operator"><span class="keyword">alter</span> <span class="keyword">table</span> 表名 <span class="keyword">drop</span> <span class="keyword">index</span> 列名;</span>
-3、设置默认值<span class="operator"><span class="keyword">alter</span> <span class="keyword">table</span> 表名 <span class="keyword">alter</span> <span class="keyword">column</span> 列名 <span class="keyword">set</span> <span class="keyword">default</span> 默认值;</span>
-99、远程登录mysql：mysql -h ip -u user -p
-    如何设置mysql允许远程登录？
-    1、vim /etc/mysql/my.cnf找到bind-address = 127.0.0.1 注释/修改指定IP
-    2、重启 MySQL：sudo /etc/init.d/mysql restart
-    3、授权用户能进行远程连接
-        <span class="operator"><span class="keyword">grant</span> <span class="keyword">all</span> <span class="keyword">privileges</span> <span class="keyword">on</span> *.* <span class="keyword">to</span> root@<span class="string">"%"</span> <span class="keyword">identified</span> <span class="keyword">by</span> <span class="string">"password"</span> <span class="keyword">with</span> <span class="keyword">grant</span> <span class="keyword">option</span>;</span>
-        <span class="operator"><span class="keyword">flush</span> <span class="keyword">privileges</span>;</span>
-6、<span class="operator"><span class="keyword">show</span> <span class="keyword">variables</span> <span class="keyword">like</span> <span class="string">'port'</span>;</span>   // 查看端口号
-7、linux下可视工具mysql-workbench (ubuntu下通过apt-get <span class="operator"><span class="keyword">install</span>直接安装)</span>
-</code></pre><h3 id="nodejs与express相关_下载">nodejs与express相关 <a href="http://nodejs.cn/" title="nodejs" target="_blank" rel="external">下载</a></h3><pre><code><span class="number">1</span>、安装任意版本的 <span class="attribute">node</span>:  nvm
-    wget -qO- <span class="attribute">https</span>:<span class="regexp">//</span>raw.github.com/creationix/nvm/master/install.sh | sh
-    nvm alias <span class="reserved">default</span> <span class="number">0.10</span>.26
-<span class="number">2</span>、express    
-    如果采用源码自编译安装nodejs，安装express时需要安装express-generator，
-    如下所示：sudo <span class="built_in">npm</span> install -g express-generator
-<span class="number">3</span>、<span class="built_in">npm</span> install -d 安装依赖包
-<span class="number">4</span>、本地起服务器
-    <span class="built_in">npm</span> install -g http-server    
-    项目目录下 http-server .     （这儿有个点～）
-<span class="number">5</span>、在对nodejs项目进行服务器迁移的时，在新的linux服务器上输入<span class="built_in">npm</span> -v 命令后报 “cannot find <span class="built_in">module</span> ‘npmlog’….”错误
-原因是拷贝过去的bin目录下的<span class="built_in">npm</span>文件并没有链接到<span class="built_in">module</span>目录下的<span class="built_in">npm</span>-cli.js文件
-在执行 <span class="built_in">npm</span> -v 命令时，路径问题导致npmlog模块无法找到。
-    解决的方法有两个，
-    第一种方式：删除bin目录下的<span class="built_in">npm</span>文件，并用如下命令链接到<span class="built_in">npm</span>-cli.js
-    ln -s ../lib/node_modules/<span class="built_in">npm</span>/bin/<span class="built_in">npm</span>-cli.js
-    第二种方式：将下载好的node-v0.10.33-linux-x64.tar.gz压缩包先放置在服务器上，
-    再进行解压缩，此时<span class="built_in">npm</span>是已经链接到<span class="built_in">npm</span>-cli.js的。
-</code></pre><h3 id="screen相关_下载">screen相关 <a href="http://ftp.gnu.org/gnu/screen" title="screen" target="_blank" rel="external">下载</a></h3><pre><code><span class="number">1</span>、干嘛用的：
-    系统管理员经常需要SSH 或者telent 远程登录到Linux 服务器，经常运行一些需要很长时间才能完成的任务，比如系统备份、ftp 传输等等。通常情况下我们都是为每一个这样的任务开一个远程终端窗口，因为它们执行的时间太长了。必须等待它们执行完毕，在此期间不能关掉窗口或者断开连接，否则这个任务就会被杀掉，一切半途而废了。
-    上面一段是复制的，简言之，screen最基本的功能是远程登录linux，启动程序X，关闭远程连接，程序X不停止。
-<span class="number">2</span>、基本用法：
-    screen -S test1  新建
-    Ctrl+a+d                    <span class="comment">#按Ctrl+a，然后再按d即可保留当前的screen会话</span>
-    exit                        <span class="comment">#这样就表示成功退出了</span>
-    <span class="pi">////</span><span class="pi">////</span><span class="pi">////</span><span class="pi">////</span><span class="pi">////</span><span class="pi">////</span>
-    screen -ls       <span class="comment">#查看所有screen会话  #假设显示 9649.test1   (Detached) Deatched表示没连接</span>
-    screen -r test1 (<span class="keyword">or</span> <span class="number">9649</span>)
-    如果上一条命令不能进入指定screen 如提示
-    screen -d test1 将指定的screen作业离线
-    screen -wipe  test1   <span class="comment">#检查所有作业 删除已经无法使用的作业</span>
-</code></pre><h3 id="Linux防火墙问题">Linux<a href="http://blog.csdn.net/bslzl/article/details/7937899" title="linux防火墙" target="_blank" rel="external">防火墙问题</a></h3><pre><code>有时候必须关闭防火墙才能操作某些东西 怎么关闭？如下
-<span class="number">1</span>) 重启后生效 
-开启： chkconfig iptables <span class="keyword">on</span> 
-关闭： chkconfig iptables off 
-
-<span class="number">2</span>) 即时生效，重启后失效 
-开启： service iptables start 
-关闭： service iptables stop 
-
-需要说明的是对于Linux下的其它服务都可以用以上命令执行开启和关闭操作。 
-
-在开启了防火墙时，做如下设置，开启相关端口， 
-修改/etc/sysconfig/iptables 文件，添加以下内容： 
--A RH-Firewall-<span class="number">1</span>-INPUT -m <span class="keyword">state</span> --state NEW -m tcp -p tcp --dport <span class="number">80</span> -j ACCEPT 
--A RH-Firewall-<span class="number">1</span>-INPUT -m <span class="keyword">state</span> --state NEW -m tcp -p tcp --dport <span class="number">22</span> -j ACCEPT
-</code></pre><h3 id="其他小东西？">其他小东西？</h3><p><a href="http://blog.chinaunix.net/uid-26404477-id-3471246.html" title="jdk" target="_blank" rel="external">安装jdk</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/09/01/Instruction/" data-id="cifr1xdla00083pkyvgy72lsp" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-git" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/08/25/git/" class="article-date">
-  <time datetime="2015-08-25T01:16:57.047Z" itemprop="datePublished">2015-08-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/08/25/git/">git常用操作</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>date: 2015-07-24 </p>
-<h2 id="多人协作的好工具Git_常用指令：">多人协作的好工具Git 常用指令：</h2><p>最近也是用的比较多把，基本的操作也算是用得挺熟了，整理下思绪，以备不时之需。<br>最最基础的操作只稍微列下表：</p>
-<ul>
-<li>git init 与 git clone </li>
-<li>git add *</li>
-<li>git commit -m “提交备注（一定要写详细 方便版本回退）”</li>
-<li>git commit -a 相当于执行前面2句 弹出的备注不写会当作取消执行</li>
-<li>git push [-u] origin master（github上默认版本库origin和分支master）</li>
-<li>git pull origin master (如果上句用了-u 这句可以省略版本库和分支)</li>
-<li>git fetch origin（获取）  &amp;&amp;  git merge origin/master（合并） 这两句等价于上面那句 （通常这样比较安全）</li>
-<li>git branch [-a] 查看本地分支 加-a可查看远程与本地对应情况</li>
-<li>git branch -r -d origin/branch-name // 删除的本地对该远程分支的关</li>
-<li>git checkout [-b] dev 切换分支（-b表示创建）并和远程库关联 </li>
-<li>git status 查看当前状态 只有工作区干净 才可以pull</li>
-<li>git reflog 查看详细的更新历史</li>
-<li>git reset —hard HEAD@{}//IDref2 回退版本 <h2 id="下面列一些相对特殊点的用法：">下面列一些相对特殊点的用法：</h2><h3 id="删除一个远程分支：">删除一个远程分支：</h3>git push origin :branch-name   //将一个空分支push上去 == 删除远程分支 冒号前面是分支名（空）<h3 id="fork的项目副本怎么与源项目的更新保持同步">fork的项目副本怎么与源项目的更新保持同步</h3>什么个情况呢，就是人家的源项目(记作upstream)，你想做点贡献，必须fork到自己的远程库(记作origin) 然后clone下来(记作local)，修改后push到origin然后再pull request请求源项目合并，那么问题来了：</li>
-<li>upstream是人家的项目，你当然无法控制他，这就是“协同开发” ，两种情况：</li>
-</ul>
-<ol>
-<li>对upstream, fork、clone、修改、push 已经完成，此时upstream项目本身已经作了一些修改，此时点pull request，会提示无法自动合并，原因是版本落后了。</li>
-<li>另外一个情况，upstream当前未修改过，pull request成功，但是upstream并没有merge这个pull request，而是自身进行了一些修改，那么这个已经产生的pull request将无效，无法merge，原因还是一样，版本落后了。</li>
-</ol>
-<ul>
-<li>以上两个情况都是local相对upstream版本落后无法合并，那么fork的项目副本怎么与源项目的更新保持同步？方法如下：<br>我们首先查看当前本地版本库与远端库的关联情况</li>
-</ul>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git remote -v</span><br><span class="line">origin	git@github<span class="class">.com</span>:JoeLucky/Practice<span class="class">.git</span> (fetch)</span><br><span class="line">origin	git@github<span class="class">.com</span>:JoeLucky/Practice<span class="class">.git</span> (push)</span><br></pre></td></tr></table></figure>
-<p>以上两行代码分别代表本地进行git pull 和 git push 所关联的远端库。因为我们的项目副本已经过期，所以我们需要添加一个最新的源项目关联至我们的本地库<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git remote add upstream git@github<span class="class">.com</span>:W2C203/Practice<span class="class">.git</span></span><br><span class="line"><span class="comment">//命令格式：git remote add [upstream] [url]，upstream是自定义的远端repo name，url为源项目地址。</span></span><br></pre></td></tr></table></figure></p>
-<p>这个时候我们再查看本地的远端库情况：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git remote -v</span><br><span class="line">origin	git@github<span class="class">.com</span>:JoeLucky/Practice<span class="class">.git</span> (fetch)</span><br><span class="line">origin	git@github<span class="class">.com</span>:JoeLucky/Practice<span class="class">.git</span> (push)</span><br><span class="line">upstream	git@github<span class="class">.com</span>:W2C203/Practice<span class="class">.git</span> (fetch)</span><br><span class="line">upstream	git@github<span class="class">.com</span>:W2C203/Practice<span class="class">.git</span> (push)</span><br></pre></td></tr></table></figure></p>
-<p>除了自己本有的副本origin还多了添加的源项目upstream。接下来，我们获取源项目的最新更新<br>(下面的操作已经比较基础 此时upstream和origin在pull上的操作相同，只是upstream不能push)<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git fetch upstream</span><br><span class="line"><span class="string">remote:</span> Counting <span class="string">objects:</span> <span class="number">23</span>, done.</span><br><span class="line"><span class="string">remote:</span> Compressing <span class="string">objects:</span> <span class="number">100</span>% (<span class="number">8</span>/<span class="number">8</span>), done.</span><br><span class="line"><span class="string">remote:</span> Total <span class="number">23</span> (delta <span class="number">6</span>), reused <span class="number">6</span> (delta <span class="number">6</span>), pack-reused <span class="number">9</span></span><br><span class="line">Unpacking <span class="string">objects:</span> <span class="number">100</span>% (<span class="number">23</span>/<span class="number">23</span>), done.</span><br><span class="line">来自 github.<span class="string">com:</span>W2C203/Practice</span><br><span class="line"> * [新分支]          gh-pages   -&gt; upstream/gh-pages</span><br><span class="line"> * [新分支]          master     -&gt; upstream/master</span><br></pre></td></tr></table></figure></p>
-<p>发现多了两个分支,我们要做的就是在本地将新更新的分支和本地master进行合并<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="operator"><span class="keyword">merge</span> upstream/<span class="keyword">master</span> </span><br><span class="line">更新 <span class="number">82646</span>f6..cc13c02</span></span><br></pre></td></tr></table></figure></p>
-<p>现在我们的local已经和upstream保持了一致，但是，origin还是过期的。最后一步也是基础了，再push到远端即可。<br><code>git push origin master</code><br>这时候在github上就可以pull request了<br>PS：另外有种麻烦的做法是在github上先用直接更新origin，然后pull origin后再push，这样比较麻烦。</p>
-<h3 id="关于冲突">关于冲突</h3><p>上述的pull过程可能会引起冲突（两条分支对同一个文件的同一个文本块进行了不同的修改，并试图合并时，Git不能自动合并的，称之为冲突(conflict)。）最终代码中的体现如下：<br><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</span><br><span class="line"><span class="header"> 当前分支中的内容</span><br><span class="line">=======</span></span><br><span class="line"><span class="code"> 要merge过来的另一条分支上的代码</span></span><br><span class="line">&gt;&gt;&gt;&gt;&gt;&gt;&gt; dev （分支的名字）</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>git对代码会按行进行审查，哪怕多一个空格也会审查出来</li>
-<li>一般来说，删除====与&gt;&gt;&gt;&gt;内的代码以及标记符号即可，不过特殊情况特殊处理，不能一概而论。</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/08/25/git/" data-id="cifr1xdl800073pkymqgiws15" class="article-share-link">Share</a>
-      
-      
     </footer>
   </div>
   
@@ -559,8 +583,8 @@ var <span class="keyword">script</span> = document.createElement (<span class="s
   
     <article id="post-圣杯与双飞翼" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/08/15/圣杯与双飞翼/" class="article-date">
-  <time datetime="2015-08-15T03:25:11.190Z" itemprop="datePublished">2015-08-15</time>
+    <a href="/2015/10/18/圣杯与双飞翼/" class="article-date">
+  <time datetime="2015-10-18T08:03:45.651Z" itemprop="datePublished">2015-10-18</time>
 </a>
     
   </div>
@@ -571,7 +595,7 @@ var <span class="keyword">script</span> = document.createElement (<span class="s
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/08/15/圣杯与双飞翼/">圣杯与双飞翼</a>
+      <a class="article-title" href="/2015/10/18/圣杯与双飞翼/">圣杯与双飞翼</a>
     </h1>
   
 
@@ -606,9 +630,11 @@ var <span class="keyword">script</span> = document.createElement (<span class="s
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/08/15/圣杯与双飞翼/" data-id="cifr1xdkg00023pkycim6dyek" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/10/18/圣杯与双飞翼/" data-id="cifwb282l000783kykeux3qqi" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Basic-knowledge/">Basic knowledge</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Css/">Css</a></li></ul>
+
     </footer>
   </div>
   
@@ -616,10 +642,10 @@ var <span class="keyword">script</span> = document.createElement (<span class="s
 
 
   
-    <article id="post-BFC" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-各种浏览器兼容问题" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/08/15/BFC/" class="article-date">
-  <time datetime="2015-08-15T03:08:15.206Z" itemprop="datePublished">2015-08-15</time>
+    <a href="/2015/10/18/各种浏览器兼容问题/" class="article-date">
+  <time datetime="2015-10-18T08:03:31.471Z" itemprop="datePublished">2015-10-18</time>
 </a>
     
   </div>
@@ -630,7 +656,7 @@ var <span class="keyword">script</span> = document.createElement (<span class="s
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/08/15/BFC/">BFC与闭合浮动</a>
+      <a class="article-title" href="/2015/10/18/各种浏览器兼容问题/">各种浏览器兼容问题</a>
     </h1>
   
 
@@ -638,42 +664,30 @@ var <span class="keyword">script</span> = document.createElement (<span class="s
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>date: 2015-08-10 </p>
-<h2 id="BFC">BFC</h2><ul>
-<li>一个独立的渲染区域，只有Block-level box参与</li>
-<li>它规定了内部的Block-level Box如何布局，并且与这个区域外部毫不相干。</li>
-</ul>
-<h2 id="哪些元素会生成BFC?">哪些元素会生成BFC?</h2><ul>
-<li>根元素</li>
-<li>float属性不为none</li>
-<li>position为absolute或fixed</li>
-<li>display为inline-block, table-cell, table-caption, flex, inline-flex</li>
-<li>overflow不为visible</li>
-</ul>
-<h2 id="BFC布局规则">BFC布局规则</h2><ul>
-<li>内部的Box会在垂直方向，一个接一个地放置。</li>
-<li>Box垂直方向的距离由margin决定。属于同一个BFC的两个相邻Box的margin会发生重叠</li>
-<li>每个元素的margin box的左边， 与包含块border box的左边相接触(对于从左往右的格式化，否则相反)。即使存在浮动也是如此。</li>
-<li>BFC的区域不会与float box重叠。</li>
-<li>BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此。</li>
-<li>计算BFC的高度时，浮动元素也参与计算</li>
-</ul>
-<h2 id="使父元素产生BFC即可闭合子元素的浮动">使父元素产生BFC即可闭合子元素的浮动</h2><p>存在的问题：每种方式都会额外的改变一些东西：</p>
-<ul>
-<li>float：为了让子元素闭合浮动，父元素也浮动起来了。</li>
-<li>overflow：这里需要注意的一些问题，IE的滚动条是放在盒子模型的里面，而FF则放在外面，这样带来的问题是比较明显的。</li>
-<li>display、position:这两个问题就更加明显了</li>
-</ul>
-<h2 id="闭合浮动的其他方式（伪元素）">闭合浮动的其他方式（伪元素）</h2><p>鉴于上述方式带来的额外影响，伪元素的方法某种程度上讲是更好的选择<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">类名:after&#123; //给父元素添加</span><br><span class="line">    content:"";</span><br><span class="line">    display:table;</span><br><span class="line">    clear:both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>另外在IE上的同效果做法：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.clearfix</span> &#123;</span><br><span class="line">    <span class="attribute">zoom</span>:<span class="number">1</span>;  <span class="comment">//缩放比例</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>查看更多资料: <a href="http://www.cnblogs.com/lhb25/p/inside-block-formatting-ontext.html" title="BFC 神奇背后的原理" target="_blank" rel="external">BFC 神奇背后的原理</a>      <a href="http://www.cnblogs.com/dolphinX/p/3508869.html" title="CSS清浮动处理（Clear与BFC）" target="_blank" rel="external">CSS清浮动处理</a></p>
+        <p>date:  2015-10-13 </p>
+<p>根据书籍、博客、实践等持续更新中……</p>
+<h2 id="要解决浏览器兼容问题，首先得知道当前使用的是什么浏览器">要解决浏览器兼容问题，首先得知道当前使用的是什么浏览器</h2><p>获取浏览器版本等信息: window.navigator.userAgent<br>  如:  “Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.130 Safari/537.36”<br>各大浏览器内核需知: IE（Trident）;  FF、Netscape（Gecko）;  Safari、chrome(Webkit)<br>另外: Opera7以上抛弃了presto内核，加入Webkit内核大家族;最新的Blink内核……</p>
+<h3 id="当然也可以通过特定浏览器特有的属性或者方法来鉴别（更方便使用）">当然也可以通过特定浏览器特有的属性或者方法来鉴别（更方便使用）</h3><p>如IE9以下的有attachEvent（绑定事件），而一般服从w3c标准的使用addEventListener;<br>(本例的解决方案可以统一使用element.onclick = function(){}的用法，但是需注意赋值会覆盖而不会叠加事件)</p>
+<h2 id="以下分类分条列出各种兼容性问题">以下分类分条列出各种兼容性问题</h2><h3 id="javascript">javascript</h3><ol>
+<li>window.event<br>Question: IE有而FF没有<br>Solve: var event = event || window.event; (此类常规解决方法以下省略不写)</li>
+<li>事件源<br>Question: IE(srcElement)、FF(target)</li>
+<li>鼠标<br>Question: IE(event.x,event.y) (event.offsetX,event.offsetY)[加滚动条]、<br> FF(event.pageX,event.pageY) (event.layerX,event.layerY)[加滚动条]<br>Solve: (event.clientX,event.clientY)[没滚动条时]</li>
+<li>相关元素<br>Question: IE(fromELement、toElement)[分别对应mouseover/out失去（获取）焦点、获得（失去）焦点元素]、<br>FF(relatedTarget)[指另外一个元素，本身用this，如mouseover事件relatedTarget指失去焦点元素，this获得焦点]<br>……</li>
+</ol>
+<h3 id="html/css(这块了解得比较少)">html/css(这块了解得比较少)</h3><ol>
+<li>Question: 不同浏览器的标签默认的外补丁和内补丁不同<br>Behavior: 随便写几个标签，不加样式控制的情况下，各自的margin 和padding差异较大。<br>Solve: *{margin: 0;padding: 0;}</li>
+<li>Question: 图片默认有间距<br>Behavior: 几个img标签放在一起的时候，有些浏览器会有默认的间距，加了通配符也不起作用。<br>Solve: 使用float属性为img布局</li>
+</ol>
+<p>查看更多资料: <a href="http://blog.csdn.net/chuyuqing/article/details/37561313" target="_blank" rel="external">常见浏览器兼容性问题与解决方案</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/08/15/BFC/" data-id="cifr1xdde00003pkytp37ip89" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/10/18/各种浏览器兼容问题/" data-id="cifwb283b000b83kyyr9zdz42" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Basic-knowledge/">Basic knowledge</a></li></ul>
+
     </footer>
   </div>
   
@@ -681,64 +695,10 @@ var <span class="keyword">script</span> = document.createElement (<span class="s
 
 
   
-    <article id="post-Handlebarsjs" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/08/15/Handlebarsjs/" class="article-date">
-  <time datetime="2015-08-15T02:59:51.950Z" itemprop="datePublished">2015-08-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/08/15/Handlebarsjs/">Handlebarsjs</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>date: 2015-07-26 </p>
-<h2 id="什么是Handlebarsjs?">什么是Handlebarsjs?</h2><ul>
-<li>Handlebars是一个Javascript模板引擎，轻松高效的编写语义化模板</li>
-<li>简单地说只要你定义一个模版，提供一个json对象，handlebars就能吧json对象放到你所给的模版中</li>
-<li>这样能将Web前端的视图和代码分离，降低两者之间耦合  </li>
-</ul>
-<h2 id="如何告诉Handlebarsjs你要用哪个模板？">如何告诉Handlebarsjs你要用哪个模板？</h2><pre><code>只需要这么一句就可以给Handlebarsjs传递一个模板
-    <span class="keyword">var</span> source   = $(<span class="string">"#entry-template"</span>).html();
-</code></pre><p>模板可以写在HTML的\<body\>标签中，也可以写在\<script\>标签中，分别如下:  </script\></body\></p>
-<pre><code><span class="tag">&lt;<span class="title">body</span>&gt;</span>中：   <span class="tag">&lt;<span class="title">任何标签x</span> <span class="attribute">id</span>=<span class="value">"entry-template"</span>&gt;</span>模板信息<span class="tag">&lt;/<span class="title">x</span>&gt;</span>  
-<span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="applescript">中： &lt;<span class="keyword">script</span> <span class="property">id</span>=<span class="string">"entry-template"</span> type=<span class="string">"text/x-handlebars-template"</span>&gt;模板信息</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
-</code></pre><h2 id="Handlebarsjs如何使用模板？">Handlebarsjs如何使用模板？</h2><pre><code>获取模板后首先需要对模板进行编译：
-    <span class="keyword">var</span> <span class="keyword">template</span> = <span class="type">Handlebars</span>.compile(source);
-然后通过 <span class="keyword">var</span> <span class="literal">result</span> = temolate(<span class="type">Data</span>);  （其中data是一个json对象）即可获得填好数据的<span class="type">DOM</span>结构
-最后通过$(<span class="string">"#"</span>).before / .html / .after(<span class="literal">result</span>)    即可将结果渲染到指定<span class="type">DOM</span>结构前/上/后
-</code></pre><hr>
-<h2 id="好了，基本用法就是这样了，下面就是在_“模板信息”_中深入了">好了，基本用法就是这样了，下面就是在 “模板信息” 中深入了</h2><h3 id="首先得知道这个“模板”是什么">首先得知道这个“模板”是什么</h3><p>Handlebars模板看起来就像是正常的Html，并使用了嵌入的 handlebars 表达式（以 双{ 开始，跟一些内容，以 双} 结束）。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">h1</span>&gt;</span>&#123;&#123; title &#125;&#125;<span class="tag">&lt;/<span class="title">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>这时候如果所提供的Data有如下结构： { title: “My New Post” ， … }那么返回的result结构就变成如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="title">h1</span>&gt;</span>My New Post<span class="tag">&lt;/<span class="title">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>如果没有这个“填充信息”，那么双大括号以及其中内容就会置空</p>
-<p>Handlebars的 <strong>双大括号表达式</strong> 会返回一个 <strong>HTML编码 HTML-escape</strong> 过的值 （替换特殊字符，在所有的计算机上正确读取字符）<br>如果不希望Handlebars来编码这些值，使用<strong>三个大括号</strong>即可：这样做的目的之一是所提供的Data对象中可以出现HTML标签信息</p>
-<p>查看更多资料: <a href="http://segmentfault.com/a/1190000000342636?from=androidqq" title="Handlebarsjs 中文" target="_blank" rel="external">Handlebarsjs 中文</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/08/15/Handlebarsjs/" data-id="cifr1xdld00093pkype1sjcjv" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 </section>
         
@@ -747,8 +707,22 @@ var <span class="keyword">script</span> = document.createElement (<span class="s
     
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Basic-knowledge/">Basic knowledge</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Css/">Css</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Regular-expression/">Regular expression</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Technical-tool/">Technical tool</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Basic-knowledge/" style="font-size: 20px;">Basic knowledge</a> <a href="/tags/Css/" style="font-size: 16.67px;">Css</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/Regular-expression/" style="font-size: 10px;">Regular expression</a> <a href="/tags/Technical-tool/" style="font-size: 13.33px;">Technical tool</a>
+    </div>
+  </div>
+
   
     
   <div class="widget-wrap">
@@ -757,43 +731,51 @@ var <span class="keyword">script</span> = document.createElement (<span class="s
       <ul>
         
           <li>
-            <a href="/2015/10/15/jsonp跨域原理/">JSONP跨域原理</a>
+            <a href="/2015/10/18/div垂直居中/">div垂直居中</a>
           </li>
         
           <li>
-            <a href="/2015/10/13/markdown/">markdown</a>
+            <a href="/2015/10/18/div水平居中/">div水平居中</a>
           </li>
         
           <li>
-            <a href="/2015/10/13/javascript优化/">javascript优化</a>
+            <a href="/2015/10/18/javascript优化/">javascript优化</a>
           </li>
         
           <li>
-            <a href="/2015/10/13/各种浏览器兼容问题/">各种浏览器兼容问题</a>
+            <a href="/2015/10/18/git/">git常用操作</a>
           </li>
         
           <li>
-            <a href="/2015/10/10/正则表达式/">正则表达式</a>
+            <a href="/2015/10/18/BFC/">BFC与浮动闭合</a>
           </li>
         
           <li>
-            <a href="/2015/09/01/Instruction/">Instruction</a>
+            <a href="/2015/10/18/markdown/">markdown</a>
           </li>
         
           <li>
-            <a href="/2015/08/25/git/">git常用操作</a>
+            <a href="/2015/10/18/Handlebarsjs/">Handlebarsjs</a>
           </li>
         
           <li>
-            <a href="/2015/08/15/圣杯与双飞翼/">圣杯与双飞翼</a>
+            <a href="/2015/10/18/正则表达式/">正则表达式</a>
           </li>
         
           <li>
-            <a href="/2015/08/15/BFC/">BFC与闭合浮动</a>
+            <a href="/2015/10/18/圣杯与双飞翼/">圣杯与双飞翼</a>
           </li>
         
           <li>
-            <a href="/2015/08/15/Handlebarsjs/">Handlebarsjs</a>
+            <a href="/2015/10/18/各种浏览器兼容问题/">各种浏览器兼容问题</a>
+          </li>
+        
+          <li>
+            <a href="/2015/10/18/jsonp跨域原理/">JSONP跨域原理</a>
+          </li>
+        
+          <li>
+            <a href="/2015/10/18/Instruction/">Instruction</a>
           </li>
         
       </ul>
